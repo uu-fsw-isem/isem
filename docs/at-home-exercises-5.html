@@ -462,8 +462,8 @@ regression analysis of the <em>Trust in Politics</em> factors that you estimated
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="at-home-exercises-5.html#cb250-1" tabindex="-1"></a>dataDir <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
-<span id="cb250-2"><a href="at-home-exercises-5.html#cb250-2" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(dataDir, <span class="st">&quot;ess_finland.rds&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="at-home-exercises-5.html#cb241-1" tabindex="-1"></a>dataDir <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
+<span id="cb241-2"><a href="at-home-exercises-5.html#cb241-2" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(dataDir, <span class="st">&quot;ess_finland.rds&quot;</span>))</span></code></pre></div>
 </details>
 <hr />
 <p>We need to do a little data processing before we can fit the regression model. At the moment, <code>lavaan</code> will not
@@ -478,21 +478,21 @@ we’ll use as predictors in our regression analysis: <em>sex</em> and <em>polit
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="at-home-exercises-5.html#cb251-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb251-2"><a href="at-home-exercises-5.html#cb251-2" tabindex="-1"></a></span>
-<span id="cb251-3"><a href="at-home-exercises-5.html#cb251-3" tabindex="-1"></a><span class="do">## Create a dummy codes by broadcasting a logical test on the factor levels:</span></span>
-<span id="cb251-4"><a href="at-home-exercises-5.html#cb251-4" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ess_fin,</span>
-<span id="cb251-5"><a href="at-home-exercises-5.html#cb251-5" tabindex="-1"></a>                  <span class="at">female =</span> <span class="fu">ifelse</span>(sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb251-6"><a href="at-home-exercises-5.html#cb251-6" tabindex="-1"></a>                  <span class="at">hi_pol_interest =</span> <span class="fu">ifelse</span>(polintr_bin <span class="sc">==</span> <span class="st">&quot;High Interest&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb251-7"><a href="at-home-exercises-5.html#cb251-7" tabindex="-1"></a>                  )</span>
-<span id="cb251-8"><a href="at-home-exercises-5.html#cb251-8" tabindex="-1"></a></span>
-<span id="cb251-9"><a href="at-home-exercises-5.html#cb251-9" tabindex="-1"></a><span class="do">## Check the results:</span></span>
-<span id="cb251-10"><a href="at-home-exercises-5.html#cb251-10" tabindex="-1"></a><span class="fu">with</span>(ess_fin, <span class="fu">table</span>(<span class="at">dummy =</span> female, <span class="at">factor =</span> sex))</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="at-home-exercises-5.html#cb242-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb242-2"><a href="at-home-exercises-5.html#cb242-2" tabindex="-1"></a></span>
+<span id="cb242-3"><a href="at-home-exercises-5.html#cb242-3" tabindex="-1"></a><span class="do">## Create a dummy codes by broadcasting a logical test on the factor levels:</span></span>
+<span id="cb242-4"><a href="at-home-exercises-5.html#cb242-4" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ess_fin,</span>
+<span id="cb242-5"><a href="at-home-exercises-5.html#cb242-5" tabindex="-1"></a>                  <span class="at">female =</span> <span class="fu">ifelse</span>(sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb242-6"><a href="at-home-exercises-5.html#cb242-6" tabindex="-1"></a>                  <span class="at">hi_pol_interest =</span> <span class="fu">ifelse</span>(polintr_bin <span class="sc">==</span> <span class="st">&quot;High Interest&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb242-7"><a href="at-home-exercises-5.html#cb242-7" tabindex="-1"></a>                  )</span>
+<span id="cb242-8"><a href="at-home-exercises-5.html#cb242-8" tabindex="-1"></a></span>
+<span id="cb242-9"><a href="at-home-exercises-5.html#cb242-9" tabindex="-1"></a><span class="do">## Check the results:</span></span>
+<span id="cb242-10"><a href="at-home-exercises-5.html#cb242-10" tabindex="-1"></a><span class="fu">with</span>(ess_fin, <span class="fu">table</span>(<span class="at">dummy =</span> female, <span class="at">factor =</span> sex))</span></code></pre></div>
 <pre><code>##      factor
 ## dummy Male Female
 ##     0  960      0
 ##     1    0   1040</code></pre>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="at-home-exercises-5.html#cb253-1" tabindex="-1"></a><span class="fu">with</span>(ess_fin, <span class="fu">table</span>(<span class="at">dummy =</span> hi_pol_interest, <span class="at">factor =</span> polintr_bin))</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="at-home-exercises-5.html#cb244-1" tabindex="-1"></a><span class="fu">with</span>(ess_fin, <span class="fu">table</span>(<span class="at">dummy =</span> hi_pol_interest, <span class="at">factor =</span> polintr_bin))</span></code></pre></div>
 <pre><code>##      factor
 ## dummy Low Interest High Interest
 ##     0         1070             0
@@ -547,17 +547,17 @@ factors from <a href="at-home-exercises-4.html#cfaSyntax">5.3.2</a> to define th
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="at-home-exercises-5.html#cb257-1" tabindex="-1"></a>mod_sem <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb257-2"><a href="at-home-exercises-5.html#cb257-2" tabindex="-1"></a><span class="st">## Define the latent DVs:</span></span>
-<span id="cb257-3"><a href="at-home-exercises-5.html#cb257-3" tabindex="-1"></a><span class="st">institutions =~ trstlgl + trstplc + trstun + trstep + trstprl</span></span>
-<span id="cb257-4"><a href="at-home-exercises-5.html#cb257-4" tabindex="-1"></a><span class="st">satisfaction =~ stfhlth + stfedu  + stfeco + stfgov + stfdem</span></span>
-<span id="cb257-5"><a href="at-home-exercises-5.html#cb257-5" tabindex="-1"></a><span class="st">politicians  =~ pltinvt + pltcare + trstplt</span></span>
-<span id="cb257-6"><a href="at-home-exercises-5.html#cb257-6" tabindex="-1"></a></span>
-<span id="cb257-7"><a href="at-home-exercises-5.html#cb257-7" tabindex="-1"></a><span class="st">## Specify the structural relations:</span></span>
-<span id="cb257-8"><a href="at-home-exercises-5.html#cb257-8" tabindex="-1"></a><span class="st">institutions ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb257-9"><a href="at-home-exercises-5.html#cb257-9" tabindex="-1"></a><span class="st">satisfaction ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb257-10"><a href="at-home-exercises-5.html#cb257-10" tabindex="-1"></a><span class="st">politicians  ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb257-11"><a href="at-home-exercises-5.html#cb257-11" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="at-home-exercises-5.html#cb248-1" tabindex="-1"></a>mod_sem <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb248-2"><a href="at-home-exercises-5.html#cb248-2" tabindex="-1"></a><span class="st">## Define the latent DVs:</span></span>
+<span id="cb248-3"><a href="at-home-exercises-5.html#cb248-3" tabindex="-1"></a><span class="st">institutions =~ trstlgl + trstplc + trstun + trstep + trstprl</span></span>
+<span id="cb248-4"><a href="at-home-exercises-5.html#cb248-4" tabindex="-1"></a><span class="st">satisfaction =~ stfhlth + stfedu  + stfeco + stfgov + stfdem</span></span>
+<span id="cb248-5"><a href="at-home-exercises-5.html#cb248-5" tabindex="-1"></a><span class="st">politicians  =~ pltinvt + pltcare + trstplt</span></span>
+<span id="cb248-6"><a href="at-home-exercises-5.html#cb248-6" tabindex="-1"></a></span>
+<span id="cb248-7"><a href="at-home-exercises-5.html#cb248-7" tabindex="-1"></a><span class="st">## Specify the structural relations:</span></span>
+<span id="cb248-8"><a href="at-home-exercises-5.html#cb248-8" tabindex="-1"></a><span class="st">institutions ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb248-9"><a href="at-home-exercises-5.html#cb248-9" tabindex="-1"></a><span class="st">satisfaction ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb248-10"><a href="at-home-exercises-5.html#cb248-10" tabindex="-1"></a><span class="st">politicians  ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb248-11"><a href="at-home-exercises-5.html#cb248-11" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
 <details>
 <summary>
 Click for explanation
@@ -585,13 +585,13 @@ estimates.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="at-home-exercises-5.html#cb258-1" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb258-2"><a href="at-home-exercises-5.html#cb258-2" tabindex="-1"></a></span>
-<span id="cb258-3"><a href="at-home-exercises-5.html#cb258-3" tabindex="-1"></a><span class="do">## Fit the SEM:</span></span>
-<span id="cb258-4"><a href="at-home-exercises-5.html#cb258-4" tabindex="-1"></a>out_sem <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_sem, <span class="at">data =</span> ess_fin, <span class="at">std.lv =</span> <span class="cn">TRUE</span>, <span class="at">fixed.x =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb258-5"><a href="at-home-exercises-5.html#cb258-5" tabindex="-1"></a></span>
-<span id="cb258-6"><a href="at-home-exercises-5.html#cb258-6" tabindex="-1"></a><span class="do">## Summarize the results:</span></span>
-<span id="cb258-7"><a href="at-home-exercises-5.html#cb258-7" tabindex="-1"></a><span class="fu">summary</span>(out_sem, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="at-home-exercises-5.html#cb249-1" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb249-2"><a href="at-home-exercises-5.html#cb249-2" tabindex="-1"></a></span>
+<span id="cb249-3"><a href="at-home-exercises-5.html#cb249-3" tabindex="-1"></a><span class="do">## Fit the SEM:</span></span>
+<span id="cb249-4"><a href="at-home-exercises-5.html#cb249-4" tabindex="-1"></a>out_sem <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_sem, <span class="at">data =</span> ess_fin, <span class="at">std.lv =</span> <span class="cn">TRUE</span>, <span class="at">fixed.x =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb249-5"><a href="at-home-exercises-5.html#cb249-5" tabindex="-1"></a></span>
+<span id="cb249-6"><a href="at-home-exercises-5.html#cb249-6" tabindex="-1"></a><span class="do">## Summarize the results:</span></span>
+<span id="cb249-7"><a href="at-home-exercises-5.html#cb249-7" tabindex="-1"></a><span class="fu">summary</span>(out_sem, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 56 iterations
 ## 
 ##   Estimator                                         ML
@@ -775,7 +775,7 @@ The <code>scoreItems()</code> function from the <strong>psych</strong> package m
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="at-home-exercises-5.html#cb260-1" tabindex="-1"></a>?psych<span class="sc">::</span>scoreItems</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="at-home-exercises-5.html#cb251-1" tabindex="-1"></a>?psych<span class="sc">::</span>scoreItems</span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -786,20 +786,20 @@ Click to show code
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="at-home-exercises-5.html#cb261-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb261-2"><a href="at-home-exercises-5.html#cb261-2" tabindex="-1"></a></span>
-<span id="cb261-3"><a href="at-home-exercises-5.html#cb261-3" tabindex="-1"></a><span class="do">## Create a list to define the item-to-score mapping</span></span>
-<span id="cb261-4"><a href="at-home-exercises-5.html#cb261-4" tabindex="-1"></a>scaleKeys <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb261-5"><a href="at-home-exercises-5.html#cb261-5" tabindex="-1"></a>  <span class="at">ins_score =</span> <span class="fu">c</span>(<span class="st">&quot;trstlgl&quot;</span>, <span class="st">&quot;trstplc&quot;</span>, <span class="st">&quot;trstun&quot;</span>, <span class="st">&quot;trstep&quot;</span>, <span class="st">&quot;trstprl&quot;</span>),</span>
-<span id="cb261-6"><a href="at-home-exercises-5.html#cb261-6" tabindex="-1"></a>  <span class="at">sat_score =</span> <span class="fu">c</span>(<span class="st">&quot;stfhlth&quot;</span>, <span class="st">&quot;stfedu&quot;</span>, <span class="st">&quot;stfeco&quot;</span>, <span class="st">&quot;stfgov&quot;</span>, <span class="st">&quot;stfdem&quot;</span>),</span>
-<span id="cb261-7"><a href="at-home-exercises-5.html#cb261-7" tabindex="-1"></a>  <span class="at">pol_score  =</span> <span class="fu">c</span>(<span class="st">&quot;pltinvt&quot;</span>, <span class="st">&quot;pltcare&quot;</span>, <span class="st">&quot;trstplt&quot;</span>)</span>
-<span id="cb261-8"><a href="at-home-exercises-5.html#cb261-8" tabindex="-1"></a>  )</span>
-<span id="cb261-9"><a href="at-home-exercises-5.html#cb261-9" tabindex="-1"></a></span>
-<span id="cb261-10"><a href="at-home-exercises-5.html#cb261-10" tabindex="-1"></a><span class="do">## Create the scale scores</span></span>
-<span id="cb261-11"><a href="at-home-exercises-5.html#cb261-11" tabindex="-1"></a>scaleScores <span class="ot">&lt;-</span> <span class="fu">scoreItems</span>(<span class="at">keys =</span> scaleKeys, <span class="at">items =</span> ess_fin, <span class="at">impute =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb261-12"><a href="at-home-exercises-5.html#cb261-12" tabindex="-1"></a></span>
-<span id="cb261-13"><a href="at-home-exercises-5.html#cb261-13" tabindex="-1"></a><span class="do">## If we print the &#39;scaleScores&#39; object, we get a bunch of interesting psychometric information</span></span>
-<span id="cb261-14"><a href="at-home-exercises-5.html#cb261-14" tabindex="-1"></a>scaleScores</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="at-home-exercises-5.html#cb252-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb252-2"><a href="at-home-exercises-5.html#cb252-2" tabindex="-1"></a></span>
+<span id="cb252-3"><a href="at-home-exercises-5.html#cb252-3" tabindex="-1"></a><span class="do">## Create a list to define the item-to-score mapping</span></span>
+<span id="cb252-4"><a href="at-home-exercises-5.html#cb252-4" tabindex="-1"></a>scaleKeys <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb252-5"><a href="at-home-exercises-5.html#cb252-5" tabindex="-1"></a>  <span class="at">ins_score =</span> <span class="fu">c</span>(<span class="st">&quot;trstlgl&quot;</span>, <span class="st">&quot;trstplc&quot;</span>, <span class="st">&quot;trstun&quot;</span>, <span class="st">&quot;trstep&quot;</span>, <span class="st">&quot;trstprl&quot;</span>),</span>
+<span id="cb252-6"><a href="at-home-exercises-5.html#cb252-6" tabindex="-1"></a>  <span class="at">sat_score =</span> <span class="fu">c</span>(<span class="st">&quot;stfhlth&quot;</span>, <span class="st">&quot;stfedu&quot;</span>, <span class="st">&quot;stfeco&quot;</span>, <span class="st">&quot;stfgov&quot;</span>, <span class="st">&quot;stfdem&quot;</span>),</span>
+<span id="cb252-7"><a href="at-home-exercises-5.html#cb252-7" tabindex="-1"></a>  <span class="at">pol_score  =</span> <span class="fu">c</span>(<span class="st">&quot;pltinvt&quot;</span>, <span class="st">&quot;pltcare&quot;</span>, <span class="st">&quot;trstplt&quot;</span>)</span>
+<span id="cb252-8"><a href="at-home-exercises-5.html#cb252-8" tabindex="-1"></a>  )</span>
+<span id="cb252-9"><a href="at-home-exercises-5.html#cb252-9" tabindex="-1"></a></span>
+<span id="cb252-10"><a href="at-home-exercises-5.html#cb252-10" tabindex="-1"></a><span class="do">## Create the scale scores</span></span>
+<span id="cb252-11"><a href="at-home-exercises-5.html#cb252-11" tabindex="-1"></a>scaleScores <span class="ot">&lt;-</span> <span class="fu">scoreItems</span>(<span class="at">keys =</span> scaleKeys, <span class="at">items =</span> ess_fin, <span class="at">impute =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb252-12"><a href="at-home-exercises-5.html#cb252-12" tabindex="-1"></a></span>
+<span id="cb252-13"><a href="at-home-exercises-5.html#cb252-13" tabindex="-1"></a><span class="do">## If we print the &#39;scaleScores&#39; object, we get a bunch of interesting psychometric information</span></span>
+<span id="cb252-14"><a href="at-home-exercises-5.html#cb252-14" tabindex="-1"></a>scaleScores</span></code></pre></div>
 <pre><code>## Call: scoreItems(keys = scaleKeys, items = ess_fin, impute = &quot;none&quot;)
 ## 
 ## (Standardized) Alpha:
@@ -855,8 +855,8 @@ Click to show code
 ## 
 ##  In order to see the item by scale loadings and frequency counts of the data
 ##  print with the short option = FALSE</code></pre>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="at-home-exercises-5.html#cb263-1" tabindex="-1"></a><span class="do">## Add the scores to the ESS dataset</span></span>
-<span id="cb263-2"><a href="at-home-exercises-5.html#cb263-2" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ess_fin, scaleScores<span class="sc">$</span>scores)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="at-home-exercises-5.html#cb254-1" tabindex="-1"></a><span class="do">## Add the scores to the ESS dataset</span></span>
+<span id="cb254-2"><a href="at-home-exercises-5.html#cb254-2" tabindex="-1"></a>ess_fin <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ess_fin, scaleScores<span class="sc">$</span>scores)</span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -867,19 +867,19 @@ Click to show code
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="at-home-exercises-5.html#cb264-1" tabindex="-1"></a><span class="do">## Specify the model syntax for the path model:</span></span>
-<span id="cb264-2"><a href="at-home-exercises-5.html#cb264-2" tabindex="-1"></a>mod_pa <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb264-3"><a href="at-home-exercises-5.html#cb264-3" tabindex="-1"></a><span class="st">## Specify the structural relations:</span></span>
-<span id="cb264-4"><a href="at-home-exercises-5.html#cb264-4" tabindex="-1"></a><span class="st">ins_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb264-5"><a href="at-home-exercises-5.html#cb264-5" tabindex="-1"></a><span class="st">sat_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb264-6"><a href="at-home-exercises-5.html#cb264-6" tabindex="-1"></a><span class="st">pol_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
-<span id="cb264-7"><a href="at-home-exercises-5.html#cb264-7" tabindex="-1"></a><span class="st">&#39;</span></span>
-<span id="cb264-8"><a href="at-home-exercises-5.html#cb264-8" tabindex="-1"></a></span>
-<span id="cb264-9"><a href="at-home-exercises-5.html#cb264-9" tabindex="-1"></a><span class="do">## Fit the path analytic model:</span></span>
-<span id="cb264-10"><a href="at-home-exercises-5.html#cb264-10" tabindex="-1"></a>out_pa <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_pa, <span class="at">data =</span> ess_fin, <span class="at">fixed.x =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb264-11"><a href="at-home-exercises-5.html#cb264-11" tabindex="-1"></a></span>
-<span id="cb264-12"><a href="at-home-exercises-5.html#cb264-12" tabindex="-1"></a><span class="do">## Summarize the results:</span></span>
-<span id="cb264-13"><a href="at-home-exercises-5.html#cb264-13" tabindex="-1"></a><span class="fu">summary</span>(out_pa, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="at-home-exercises-5.html#cb255-1" tabindex="-1"></a><span class="do">## Specify the model syntax for the path model:</span></span>
+<span id="cb255-2"><a href="at-home-exercises-5.html#cb255-2" tabindex="-1"></a>mod_pa <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb255-3"><a href="at-home-exercises-5.html#cb255-3" tabindex="-1"></a><span class="st">## Specify the structural relations:</span></span>
+<span id="cb255-4"><a href="at-home-exercises-5.html#cb255-4" tabindex="-1"></a><span class="st">ins_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb255-5"><a href="at-home-exercises-5.html#cb255-5" tabindex="-1"></a><span class="st">sat_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb255-6"><a href="at-home-exercises-5.html#cb255-6" tabindex="-1"></a><span class="st">pol_score ~ female + age + eduyrs + hi_pol_interest + lrscale</span></span>
+<span id="cb255-7"><a href="at-home-exercises-5.html#cb255-7" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb255-8"><a href="at-home-exercises-5.html#cb255-8" tabindex="-1"></a></span>
+<span id="cb255-9"><a href="at-home-exercises-5.html#cb255-9" tabindex="-1"></a><span class="do">## Fit the path analytic model:</span></span>
+<span id="cb255-10"><a href="at-home-exercises-5.html#cb255-10" tabindex="-1"></a>out_pa <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_pa, <span class="at">data =</span> ess_fin, <span class="at">fixed.x =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb255-11"><a href="at-home-exercises-5.html#cb255-11" tabindex="-1"></a></span>
+<span id="cb255-12"><a href="at-home-exercises-5.html#cb255-12" tabindex="-1"></a><span class="do">## Summarize the results:</span></span>
+<span id="cb255-13"><a href="at-home-exercises-5.html#cb255-13" tabindex="-1"></a><span class="fu">summary</span>(out_pa, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 43 iterations
 ## 
 ##   Estimator                                         ML
@@ -1014,10 +1014,10 @@ Click to show code
 <p><em>Note:</em> The “supportFunction.R” script that we source below isn’t a necessary part of the solution. This script defines
 a bunch of convenience functions. One of these functions, <code>partSummary()</code>, allows us to print selected pieces of the
 model summary.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="at-home-exercises-5.html#cb266-1" tabindex="-1"></a><span class="do">## Source the script that defines the partSummary() convenience function:</span></span>
-<span id="cb266-2"><a href="at-home-exercises-5.html#cb266-2" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;code&quot;</span>, <span class="st">&quot;supportFunctions.R&quot;</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="at-home-exercises-5.html#cb267-1" tabindex="-1"></a><span class="do">## View the regression estimates from the SEM:</span></span>
-<span id="cb267-2"><a href="at-home-exercises-5.html#cb267-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_sem, <span class="dv">8</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="at-home-exercises-5.html#cb257-1" tabindex="-1"></a><span class="do">## Source the script that defines the partSummary() convenience function:</span></span>
+<span id="cb257-2"><a href="at-home-exercises-5.html#cb257-2" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;code&quot;</span>, <span class="st">&quot;supportFunctions.R&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="at-home-exercises-5.html#cb258-1" tabindex="-1"></a><span class="do">## View the regression estimates from the SEM:</span></span>
+<span id="cb258-2"><a href="at-home-exercises-5.html#cb258-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_sem, <span class="dv">8</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Regressions:
 ##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
 ##   institutions ~                                                        
@@ -1038,8 +1038,8 @@ model summary.</p>
 ##     eduyrs            0.014    0.007    1.993    0.046    0.013    0.052
 ##     hi_pol_interst    0.512    0.052    9.854    0.000    0.485    0.242
 ##     lrscale           0.070    0.012    5.736    0.000    0.067    0.135</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="at-home-exercises-5.html#cb269-1" tabindex="-1"></a><span class="do">## View the regression estimates from the path analysis:</span></span>
-<span id="cb269-2"><a href="at-home-exercises-5.html#cb269-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_pa, <span class="dv">7</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="at-home-exercises-5.html#cb260-1" tabindex="-1"></a><span class="do">## View the regression estimates from the path analysis:</span></span>
+<span id="cb260-2"><a href="at-home-exercises-5.html#cb260-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_pa, <span class="dv">7</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Regressions:
 ##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
 ##   ins_score ~                                                           
@@ -1060,8 +1060,8 @@ model summary.</p>
 ##     eduyrs            0.020    0.007    2.878    0.004    0.020    0.069
 ##     hi_pol_interst    0.541    0.050   10.722    0.000    0.541    0.236
 ##     lrscale           0.064    0.012    5.270    0.000    0.064    0.113</code></pre>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="at-home-exercises-5.html#cb271-1" tabindex="-1"></a><span class="do">## View the R-squared estimates from the SEM:</span></span>
-<span id="cb271-2"><a href="at-home-exercises-5.html#cb271-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_sem, <span class="dv">11</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="at-home-exercises-5.html#cb262-1" tabindex="-1"></a><span class="do">## View the R-squared estimates from the SEM:</span></span>
+<span id="cb262-2"><a href="at-home-exercises-5.html#cb262-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_sem, <span class="dv">11</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## R-Square:
 ##                    Estimate
 ##     trstlgl           0.457
@@ -1080,8 +1080,8 @@ model summary.</p>
 ##     institutions      0.070
 ##     satisfaction      0.066
 ##     politicians       0.104</code></pre>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="at-home-exercises-5.html#cb273-1" tabindex="-1"></a><span class="do">## View the R-squared estimates from the SEM:</span></span>
-<span id="cb273-2"><a href="at-home-exercises-5.html#cb273-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_pa, <span class="dv">10</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="at-home-exercises-5.html#cb264-1" tabindex="-1"></a><span class="do">## View the R-squared estimates from the SEM:</span></span>
+<span id="cb264-2"><a href="at-home-exercises-5.html#cb264-2" tabindex="-1"></a><span class="fu">partSummary</span>(out_pa, <span class="dv">10</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## R-Square:
 ##                    Estimate
 ##     ins_score         0.051
