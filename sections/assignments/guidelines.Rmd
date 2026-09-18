@@ -49,7 +49,8 @@ model.
 
 See the [Grading](#assignment_grading) section below for more information on how Assignment 1 will be evaluated.
 
-You can access an evaluation matrix for Assignment 1 [here](`r makeCourseUrl("assets/assignments/a1_guidelines.pdf")`).
+<!-- You can access an evaluation matrix for Assignment 1 [here](`r makeCourseUrl("assets/assignments/a1_guidelines.pdf")`). -->
+You can access an evaluation matrix for Assignment 1 [here](assets/assignments/a1_guidelines.pdf).
 
 - This matrix gives an indication of what level of work constitutes *insufficient*, *sufficient*, and *excellent*
 responses to the five components described above.
