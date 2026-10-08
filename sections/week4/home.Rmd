@@ -174,13 +174,13 @@ Check the results, and answer the following questions:
   <summary>Click to show code</summary>
 
 ```{r}
-## Load the lavaan package:
+# Load the lavaan package:
 library(lavaan)
 
-## Estimate the CFA model:
+# Estimate the CFA model:
 outH1.1 <- cfa(mod1, data = cattell)
 
-## Summarize the fitted model:
+# Summarize the fitted model:
 summary(outH1.1)
 ```
 
@@ -300,10 +300,10 @@ Estimate the two-factor model you specified in \@ref(cfaSyntax2), and summarize 
   <summary>Click to show code</summary>
 
 ```{r}
-## Estimate the two factor model:
+# Estimate the two factor model:
 outH2.1 <- cfa(mod2, data = cattell)
 
-## Summarize the results:
+# Summarize the results:
 summary(outH2.1)
 ```
 
@@ -355,7 +355,10 @@ pValue <- prettyPValue(tmp$p)
 ```
 
 Yes, warmth and dominance are significantly correlated
-($\psi_{2,1} = `r psi2_1`$, $SE = `r se`$, $z = `r z`$, $`r pValue`$).
+$(\psi_{2,1} = `r psi2_1`,$
+$SE = `r se`,$
+$z = `r z`,$
+$`r pValue`).$
 
 </details>
 
@@ -465,4 +468,3 @@ End of At-Home Exercises
 
 [ipip]: https://ipip.ori.org/
 [cattell_wiki]: https://en.wikipedia.org/wiki/16PF_Questionnaire
-

@@ -98,13 +98,13 @@ Estimate the CFA model you defined in \@ref(cfaSyntaxClass1), and summarize the 
   <summary>Click to show code</summary>
 
 ```{r}
-## Load the lavaan package:
+# Load the lavaan package:
 library(lavaan)
 
-## Estimate the CFA model:
+# Estimate the CFA model:
 outC1.1 <- cfa(mod1, data = cattell)
 
-## Summarize the fitted model:
+# Summarize the fitted model:
 summary(outC1.1)
 ```
 
@@ -191,28 +191,28 @@ z   <- round(z, 2)
 
 The estimated latent covariances largely conform to theoretical expectations. The two "pro-social" factors, *Warmth* and
 *Liveliness*, are positively associated
-$(\psi_{2,1} = `r psi[2, 1]`$,
-$\textit{SE} = `r se[2, 1]`$,
-$`r prettyPValue(p[2, 1])`)$,
+$(\psi_{2,1} = `r psi[2, 1]`,$
+$\textit{SE} = `r se[2, 1]`,$
+$`r prettyPValue(p[2, 1])`),$
 as are the two "anti-social" factors, *Vigilance* and *Tension*,
-$(\psi_{4,3} = `r psi[4, 3]`$,
-$\textit{SE} = `r se[4, 3]`$,
-$`r prettyPValue(p[4, 3])`)$.
+$(\psi_{4,3} = `r psi[4, 3]`,$
+$\textit{SE} = `r se[4, 3]`,$
+$`r prettyPValue(p[4, 3])`).$
 Furthermore, *Warmth* negatively correlates with both of the "anti-social" factors
-(*Vigilance*: $\psi_{3,1} = `r psi[3, 1]`$,
-$\textit{SE} = `r se[3, 1]`$,
-$`r prettyPValue(p[3, 1])`$;
-*Tension*: $\psi_{4,1} = `r psi[4, 1]`$,
-$\textit{SE} = `r se[4, 1]`$,
-$`r prettyPValue(p[4, 1])`)$,
+(*Vigilance*: $\psi_{3,1} = `r psi[3, 1]`,$
+$\textit{SE} = `r se[3, 1]`,$
+$`r prettyPValue(p[3, 1])`;$
+*Tension*: $\psi_{4,1} = `r psi[4, 1]`,$
+$\textit{SE} = `r se[4, 1]`,$
+$`r prettyPValue(p[4, 1])`),$
 and *Liveliness* negatively correlates with *Vigilance*
-$(\psi_{2,3} = `r psi[2, 3]`$,
-$\textit{SE} = `r se[2, 3]`$,
-$`r prettyPValue(p[2, 3])`)$.
+$(\psi_{2,3} = `r psi[2, 3]`,$
+$\textit{SE} = `r se[2, 3]`,$
+$`r prettyPValue(p[2, 3])`).$
 Only *Liveliness* and *Tension* are not significantly associated
-$(\psi_{2,4} = `r psi[2, 4]`$,
-$\textit{SE} = `r se[2, 4]`$,
-$`r prettyPValue(p[2, 4])`)$.
+$(\psi_{2,4} = `r psi[2, 4]`,$
+$\textit{SE} = `r se[2, 4]`,$
+$`r prettyPValue(p[2, 4])`).$
   
 </details>
 
@@ -398,4 +398,3 @@ End of In-Class Exercises
 
 [ipip]: https://ipip.ori.org/
 [cattell_wiki]: https://en.wikipedia.org/wiki/16PF_Questionnaire
-

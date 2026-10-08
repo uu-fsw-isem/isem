@@ -458,8 +458,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="in-class-exercises-4.html#cb192-1" tabindex="-1"></a>dataDir <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
-<span id="cb192-2"><a href="in-class-exercises-4.html#cb192-2" tabindex="-1"></a>ess <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(dataDir, <span class="st">&quot;ess_round1.rds&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="in-class-exercises-4.html#cb183-1" tabindex="-1"></a>dataDir <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
+<span id="cb183-2"><a href="in-class-exercises-4.html#cb183-2" tabindex="-1"></a>ess <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(dataDir, <span class="st">&quot;ess_round1.rds&quot;</span>))</span></code></pre></div>
 </details>
 <hr />
 <p>We are going to extend our existing three-factor CFA by adding the five-factor representation of the <em>Attitudes toward
@@ -578,31 +578,31 @@ constrain 9 parameters.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="in-class-exercises-4.html#cb193-1" tabindex="-1"></a>mod_trust_att <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb193-2"><a href="in-class-exercises-4.html#cb193-2" tabindex="-1"></a><span class="st">## Trust in Institutions:</span></span>
-<span id="cb193-3"><a href="in-class-exercises-4.html#cb193-3" tabindex="-1"></a><span class="st">inst =~ trstlgl + trstplc + trstun + trstep + trstprl</span></span>
-<span id="cb193-4"><a href="in-class-exercises-4.html#cb193-4" tabindex="-1"></a></span>
-<span id="cb193-5"><a href="in-class-exercises-4.html#cb193-5" tabindex="-1"></a><span class="st">## Satisfaction with the Political Situation:</span></span>
-<span id="cb193-6"><a href="in-class-exercises-4.html#cb193-6" tabindex="-1"></a><span class="st">sat =~ stfhlth + stfedu  + stfeco + stfgov + stfdem</span></span>
-<span id="cb193-7"><a href="in-class-exercises-4.html#cb193-7" tabindex="-1"></a></span>
-<span id="cb193-8"><a href="in-class-exercises-4.html#cb193-8" tabindex="-1"></a><span class="st">## Trust in Politicians:</span></span>
-<span id="cb193-9"><a href="in-class-exercises-4.html#cb193-9" tabindex="-1"></a><span class="st">pol =~ pltinvt + pltcare + trstplt</span></span>
-<span id="cb193-10"><a href="in-class-exercises-4.html#cb193-10" tabindex="-1"></a></span>
-<span id="cb193-11"><a href="in-class-exercises-4.html#cb193-11" tabindex="-1"></a><span class="st">## Immigration Policy:</span></span>
-<span id="cb193-12"><a href="in-class-exercises-4.html#cb193-12" tabindex="-1"></a><span class="st">immi =~ imrcntr + eimrcnt + eimpcnt + imsmetn + impcntr + imdfetn </span></span>
-<span id="cb193-13"><a href="in-class-exercises-4.html#cb193-13" tabindex="-1"></a></span>
-<span id="cb193-14"><a href="in-class-exercises-4.html#cb193-14" tabindex="-1"></a><span class="st">## Social Threat:</span></span>
-<span id="cb193-15"><a href="in-class-exercises-4.html#cb193-15" tabindex="-1"></a><span class="st">social =~ imbgeco + imbleco + imwbcnt + imwbcrm + imtcjob + imueclt</span></span>
-<span id="cb193-16"><a href="in-class-exercises-4.html#cb193-16" tabindex="-1"></a></span>
-<span id="cb193-17"><a href="in-class-exercises-4.html#cb193-17" tabindex="-1"></a><span class="st">## Refugee Policy:</span></span>
-<span id="cb193-18"><a href="in-class-exercises-4.html#cb193-18" tabindex="-1"></a><span class="st">refugee =~ gvrfgap + imrsprc + rfgbfml + rfggvfn + rfgawrk + rfgfrpc + shrrfg</span></span>
-<span id="cb193-19"><a href="in-class-exercises-4.html#cb193-19" tabindex="-1"></a></span>
-<span id="cb193-20"><a href="in-class-exercises-4.html#cb193-20" tabindex="-1"></a><span class="st">## Cultural Threat:</span></span>
-<span id="cb193-21"><a href="in-class-exercises-4.html#cb193-21" tabindex="-1"></a><span class="st">cult =~ qfimchr + qfimwht + pplstrd + vrtrlg</span></span>
-<span id="cb193-22"><a href="in-class-exercises-4.html#cb193-22" tabindex="-1"></a></span>
-<span id="cb193-23"><a href="in-class-exercises-4.html#cb193-23" tabindex="-1"></a><span class="st">## Economic Threat:</span></span>
-<span id="cb193-24"><a href="in-class-exercises-4.html#cb193-24" tabindex="-1"></a><span class="st">econ =~ l*imwgdwn + l*imhecop </span></span>
-<span id="cb193-25"><a href="in-class-exercises-4.html#cb193-25" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="in-class-exercises-4.html#cb184-1" tabindex="-1"></a>mod_trust_att <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb184-2"><a href="in-class-exercises-4.html#cb184-2" tabindex="-1"></a><span class="st">## Trust in Institutions:</span></span>
+<span id="cb184-3"><a href="in-class-exercises-4.html#cb184-3" tabindex="-1"></a><span class="st">inst =~ trstlgl + trstplc + trstun + trstep + trstprl</span></span>
+<span id="cb184-4"><a href="in-class-exercises-4.html#cb184-4" tabindex="-1"></a></span>
+<span id="cb184-5"><a href="in-class-exercises-4.html#cb184-5" tabindex="-1"></a><span class="st">## Satisfaction with the Political Situation:</span></span>
+<span id="cb184-6"><a href="in-class-exercises-4.html#cb184-6" tabindex="-1"></a><span class="st">sat =~ stfhlth + stfedu  + stfeco + stfgov + stfdem</span></span>
+<span id="cb184-7"><a href="in-class-exercises-4.html#cb184-7" tabindex="-1"></a></span>
+<span id="cb184-8"><a href="in-class-exercises-4.html#cb184-8" tabindex="-1"></a><span class="st">## Trust in Politicians:</span></span>
+<span id="cb184-9"><a href="in-class-exercises-4.html#cb184-9" tabindex="-1"></a><span class="st">pol =~ pltinvt + pltcare + trstplt</span></span>
+<span id="cb184-10"><a href="in-class-exercises-4.html#cb184-10" tabindex="-1"></a></span>
+<span id="cb184-11"><a href="in-class-exercises-4.html#cb184-11" tabindex="-1"></a><span class="st">## Immigration Policy:</span></span>
+<span id="cb184-12"><a href="in-class-exercises-4.html#cb184-12" tabindex="-1"></a><span class="st">immi =~ imrcntr + eimrcnt + eimpcnt + imsmetn + impcntr + imdfetn </span></span>
+<span id="cb184-13"><a href="in-class-exercises-4.html#cb184-13" tabindex="-1"></a></span>
+<span id="cb184-14"><a href="in-class-exercises-4.html#cb184-14" tabindex="-1"></a><span class="st">## Social Threat:</span></span>
+<span id="cb184-15"><a href="in-class-exercises-4.html#cb184-15" tabindex="-1"></a><span class="st">social =~ imbgeco + imbleco + imwbcnt + imwbcrm + imtcjob + imueclt</span></span>
+<span id="cb184-16"><a href="in-class-exercises-4.html#cb184-16" tabindex="-1"></a></span>
+<span id="cb184-17"><a href="in-class-exercises-4.html#cb184-17" tabindex="-1"></a><span class="st">## Refugee Policy:</span></span>
+<span id="cb184-18"><a href="in-class-exercises-4.html#cb184-18" tabindex="-1"></a><span class="st">refugee =~ gvrfgap + imrsprc + rfgbfml + rfggvfn + rfgawrk + rfgfrpc + shrrfg</span></span>
+<span id="cb184-19"><a href="in-class-exercises-4.html#cb184-19" tabindex="-1"></a></span>
+<span id="cb184-20"><a href="in-class-exercises-4.html#cb184-20" tabindex="-1"></a><span class="st">## Cultural Threat:</span></span>
+<span id="cb184-21"><a href="in-class-exercises-4.html#cb184-21" tabindex="-1"></a><span class="st">cult =~ qfimchr + qfimwht + pplstrd + vrtrlg</span></span>
+<span id="cb184-22"><a href="in-class-exercises-4.html#cb184-22" tabindex="-1"></a></span>
+<span id="cb184-23"><a href="in-class-exercises-4.html#cb184-23" tabindex="-1"></a><span class="st">## Economic Threat:</span></span>
+<span id="cb184-24"><a href="in-class-exercises-4.html#cb184-24" tabindex="-1"></a><span class="st">econ =~ l*imwgdwn + l*imhecop </span></span>
+<span id="cb184-25"><a href="in-class-exercises-4.html#cb184-25" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
 <p><em>Note:</em> We equate the factor loadings for the <em>Economic Threat</em> factor because that construct is under-identified
 without the extra constraints.</p>
 </details>
@@ -622,14 +622,14 @@ without the extra constraints.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="in-class-exercises-4.html#cb194-1" tabindex="-1"></a><span class="do">## Load the lavaan package:</span></span>
-<span id="cb194-2"><a href="in-class-exercises-4.html#cb194-2" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb194-3"><a href="in-class-exercises-4.html#cb194-3" tabindex="-1"></a></span>
-<span id="cb194-4"><a href="in-class-exercises-4.html#cb194-4" tabindex="-1"></a><span class="do">## Estimate the CFA model:</span></span>
-<span id="cb194-5"><a href="in-class-exercises-4.html#cb194-5" tabindex="-1"></a>out_trust_att <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb194-6"><a href="in-class-exercises-4.html#cb194-6" tabindex="-1"></a></span>
-<span id="cb194-7"><a href="in-class-exercises-4.html#cb194-7" tabindex="-1"></a><span class="do">## Summarize the fitted model:</span></span>
-<span id="cb194-8"><a href="in-class-exercises-4.html#cb194-8" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="in-class-exercises-4.html#cb185-1" tabindex="-1"></a><span class="do">## Load the lavaan package:</span></span>
+<span id="cb185-2"><a href="in-class-exercises-4.html#cb185-2" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb185-3"><a href="in-class-exercises-4.html#cb185-3" tabindex="-1"></a></span>
+<span id="cb185-4"><a href="in-class-exercises-4.html#cb185-4" tabindex="-1"></a><span class="do">## Estimate the CFA model:</span></span>
+<span id="cb185-5"><a href="in-class-exercises-4.html#cb185-5" tabindex="-1"></a>out_trust_att <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb185-6"><a href="in-class-exercises-4.html#cb185-6" tabindex="-1"></a></span>
+<span id="cb185-7"><a href="in-class-exercises-4.html#cb185-7" tabindex="-1"></a><span class="do">## Summarize the fitted model:</span></span>
+<span id="cb185-8"><a href="in-class-exercises-4.html#cb185-8" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 55 iterations
 ## 
 ##   Estimator                                         ML
@@ -861,10 +861,10 @@ be overly optimistic when computed from large models with many degrees of freedo
 <div id="parameter-estimates" class="section level5 unnumbered hasAnchor">
 <h5>Parameter Estimates<a href="in-class-exercises-4.html#parameter-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The standardized factor loadings and residual variances seem fine.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="in-class-exercises-4.html#cb196-1" tabindex="-1"></a>est <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(out_trust_att, <span class="st">&quot;standardized&quot;</span>)</span>
-<span id="cb196-2"><a href="in-class-exercises-4.html#cb196-2" tabindex="-1"></a><span class="fu">cbind</span>(est<span class="sc">$</span>lambda, <span class="at">Resid_Var =</span> <span class="fu">diag</span>(est<span class="sc">$</span>theta)) <span class="sc">|&gt;</span></span>
-<span id="cb196-3"><a href="in-class-exercises-4.html#cb196-3" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb196-4"><a href="in-class-exercises-4.html#cb196-4" tabindex="-1"></a>  Matrix<span class="sc">::</span><span class="fu">Matrix</span>(<span class="at">sparse =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="in-class-exercises-4.html#cb187-1" tabindex="-1"></a>est <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(out_trust_att, <span class="st">&quot;standardized&quot;</span>)</span>
+<span id="cb187-2"><a href="in-class-exercises-4.html#cb187-2" tabindex="-1"></a><span class="fu">cbind</span>(est<span class="sc">$</span>lambda, <span class="at">Resid_Var =</span> <span class="fu">diag</span>(est<span class="sc">$</span>theta)) <span class="sc">|&gt;</span></span>
+<span id="cb187-3"><a href="in-class-exercises-4.html#cb187-3" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb187-4"><a href="in-class-exercises-4.html#cb187-4" tabindex="-1"></a>  Matrix<span class="sc">::</span><span class="fu">Matrix</span>(<span class="at">sparse =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 38 x 9 sparse Matrix of class &quot;dgCMatrix&quot;
 ##          inst   sat   pol  immi social refugee   cult  econ Resid_Var
 ## trstlgl 0.684 .     .     .      .       .      .     .         0.532
@@ -906,7 +906,7 @@ be overly optimistic when computed from large models with many degrees of freedo
 ## imwgdwn .     .     .     .      .       .      .     0.706     0.501
 ## imhecop .     .     .     .      .       .      .     0.719     0.483</code></pre>
 <p>The latent correlations look sensible.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="in-class-exercises-4.html#cb198-1" tabindex="-1"></a><span class="fu">round</span>(est<span class="sc">$</span>psi, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="in-class-exercises-4.html#cb189-1" tabindex="-1"></a><span class="fu">round</span>(est<span class="sc">$</span>psi, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##           inst    sat    pol   immi social refuge   cult   econ
 ## inst     1.000                                                 
 ## sat      0.746  1.000                                          
@@ -957,7 +957,7 @@ estimates that parameter. Hence, we can use the modification indices to help us 
 when modifying our hypothesized model.</p>
 <p>The following code will compute the modification indices for the three-factor model of <em>Trust in Politics</em> from the
 At-Home Exercises.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="in-class-exercises-4.html#cb200-1" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="in-class-exercises-4.html#cb191-1" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##              lhs op     rhs       mi    epc sepc.lv sepc.all sepc.nox
 ## 59       trstlgl ~~ trstplc 2753.812  1.537   1.537    0.487    0.487
 ## 134      pltinvt ~~ pltcare 2621.216  0.325   0.325    0.478    0.478
@@ -1065,7 +1065,7 @@ At-Home Exercises.</p>
 ## 126       stfeco ~~ trstplt    0.001 -0.001  -0.001    0.000    0.000</code></pre>
 <p>As you can see, the <code>modificationInices()</code> function will usually produce a lot of output, but we only care about the
 largest modification indices. So, we can simplify by printing only the first few rows.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="in-class-exercises-4.html#cb202-1" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="in-class-exercises-4.html#cb193-1" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##              lhs op     rhs       mi   epc sepc.lv sepc.all sepc.nox
 ## 59       trstlgl ~~ trstplc 2753.812 1.537   1.537    0.487    0.487
 ## 134      pltinvt ~~ pltcare 2621.216 0.325   0.325    0.478    0.478
@@ -1075,8 +1075,8 @@ largest modification indices. So, we can simplify by printing only the first few
 ## 82        trstun ~~  trstep  996.711 0.890   0.890    0.299    0.299</code></pre>
 <p>Alternatively, we can request only those modification indices that exceed some minimum threshold. We can use 10% of the
 model <span class="math inline">\(\chi^2\)</span> as a useful rule-of-thumb.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="in-class-exercises-4.html#cb204-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_3f, <span class="st">&quot;chisq&quot;</span>)</span>
-<span id="cb204-2"><a href="in-class-exercises-4.html#cb204-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="in-class-exercises-4.html#cb195-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_3f, <span class="st">&quot;chisq&quot;</span>)</span>
+<span id="cb195-2"><a href="in-class-exercises-4.html#cb195-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_3f, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
 <pre><code>##              lhs op     rhs       mi   epc sepc.lv sepc.all sepc.nox
 ## 59       trstlgl ~~ trstplc 2753.812 1.537   1.537    0.487    0.487
 ## 134      pltinvt ~~ pltcare 2621.216 0.325   0.325    0.478    0.478
@@ -1143,8 +1143,8 @@ models, but this is one of those “do as I say, not as I do” type situations.
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="in-class-exercises-4.html#cb206-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_trust_att, <span class="st">&quot;chisq&quot;</span>)</span>
-<span id="cb206-2"><a href="in-class-exercises-4.html#cb206-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_trust_att, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="in-class-exercises-4.html#cb197-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_trust_att, <span class="st">&quot;chisq&quot;</span>)</span>
+<span id="cb197-2"><a href="in-class-exercises-4.html#cb197-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_trust_att, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
 <pre><code>##         lhs op     rhs       mi   epc sepc.lv sepc.all sepc.nox
 ## 783 imrcntr ~~ eimrcnt 5114.364 0.232   0.232    0.711    0.711</code></pre>
 <details>
@@ -1171,12 +1171,12 @@ explicitly address immigration from rich countries.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="in-class-exercises-4.html#cb208-1" tabindex="-1"></a><span class="do">## Add the residual covariance to the model syntax:</span></span>
-<span id="cb208-2"><a href="in-class-exercises-4.html#cb208-2" tabindex="-1"></a>mod_trust_att2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att, <span class="st">&quot;imrcntr ~~ eimrcnt&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb208-3"><a href="in-class-exercises-4.html#cb208-3" tabindex="-1"></a></span>
-<span id="cb208-4"><a href="in-class-exercises-4.html#cb208-4" tabindex="-1"></a><span class="do">## Estimate and summarize the modified model:</span></span>
-<span id="cb208-5"><a href="in-class-exercises-4.html#cb208-5" tabindex="-1"></a>out_trust_att2 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att2, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb208-6"><a href="in-class-exercises-4.html#cb208-6" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att2, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="in-class-exercises-4.html#cb199-1" tabindex="-1"></a><span class="do">## Add the residual covariance to the model syntax:</span></span>
+<span id="cb199-2"><a href="in-class-exercises-4.html#cb199-2" tabindex="-1"></a>mod_trust_att2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att, <span class="st">&quot;imrcntr ~~ eimrcnt&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb199-3"><a href="in-class-exercises-4.html#cb199-3" tabindex="-1"></a></span>
+<span id="cb199-4"><a href="in-class-exercises-4.html#cb199-4" tabindex="-1"></a><span class="do">## Estimate and summarize the modified model:</span></span>
+<span id="cb199-5"><a href="in-class-exercises-4.html#cb199-5" tabindex="-1"></a>out_trust_att2 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att2, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb199-6"><a href="in-class-exercises-4.html#cb199-6" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att2, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 52 iterations
 ## 
 ##   Estimator                                         ML
@@ -1392,8 +1392,8 @@ Click to show code
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="in-class-exercises-4.html#cb210-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_trust_att2, <span class="st">&quot;chisq&quot;</span>)</span>
-<span id="cb210-2"><a href="in-class-exercises-4.html#cb210-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_trust_att2, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="in-class-exercises-4.html#cb201-1" tabindex="-1"></a>thresh <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fu">fitMeasures</span>(out_trust_att2, <span class="st">&quot;chisq&quot;</span>)</span>
+<span id="cb201-2"><a href="in-class-exercises-4.html#cb201-2" tabindex="-1"></a><span class="fu">modificationIndices</span>(out_trust_att2, <span class="at">sort. =</span> <span class="cn">TRUE</span>, <span class="at">minimum.value =</span> thresh)</span></code></pre></div>
 <pre><code>##         lhs op     rhs       mi   epc sepc.lv sepc.all sepc.nox
 ## 381 trstlgl ~~ trstplc 2132.874 1.484   1.484    0.481    0.481</code></pre>
 <details>
@@ -1420,12 +1420,12 @@ courts or police.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="in-class-exercises-4.html#cb212-1" tabindex="-1"></a><span class="do">## Add the residual covariance to the model syntax:</span></span>
-<span id="cb212-2"><a href="in-class-exercises-4.html#cb212-2" tabindex="-1"></a>mod_trust_att3 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att2, <span class="st">&quot;trstlgl ~~ trstplc&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb212-3"><a href="in-class-exercises-4.html#cb212-3" tabindex="-1"></a></span>
-<span id="cb212-4"><a href="in-class-exercises-4.html#cb212-4" tabindex="-1"></a><span class="do">## Estimate and summarize the modified model:</span></span>
-<span id="cb212-5"><a href="in-class-exercises-4.html#cb212-5" tabindex="-1"></a>out_trust_att3 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att3, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb212-6"><a href="in-class-exercises-4.html#cb212-6" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att3, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="in-class-exercises-4.html#cb203-1" tabindex="-1"></a><span class="do">## Add the residual covariance to the model syntax:</span></span>
+<span id="cb203-2"><a href="in-class-exercises-4.html#cb203-2" tabindex="-1"></a>mod_trust_att3 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att2, <span class="st">&quot;trstlgl ~~ trstplc&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb203-3"><a href="in-class-exercises-4.html#cb203-3" tabindex="-1"></a></span>
+<span id="cb203-4"><a href="in-class-exercises-4.html#cb203-4" tabindex="-1"></a><span class="do">## Estimate and summarize the modified model:</span></span>
+<span id="cb203-5"><a href="in-class-exercises-4.html#cb203-5" tabindex="-1"></a>out_trust_att3 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att3, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb203-6"><a href="in-class-exercises-4.html#cb203-6" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att3, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 57 iterations
 ## 
 ##   Estimator                                         ML
@@ -1640,8 +1640,6 @@ test, change in chi-squared test, likelihood ratio test).</p>
 concepts now. Two models are said to be <em>nested</em> if you can define one model by placing constraints on the other model.</p>
 <p>By way of example, consider the following two CFA models.</p>
 <pre><code>## Error in `library()`:
-## ! there is no package called &#39;semPlot&#39;</code></pre>
-<pre><code>## Error in `library()`:
 ## ! there is no package called &#39;semptools&#39;</code></pre>
 <pre><code>## Error in `rotate_resid()`:
 ## ! could not find function &quot;rotate_resid&quot;</code></pre>
@@ -1672,8 +1670,7 @@ estimating all possible associations. Hence, all models are nested within the sa
 only estimate the variances of the observed items; all associations are constrained to zero. We can always convert our
 model to the baseline model by fixing all associations to zero. Hence, the baseline model is nested within all other
 models.</p>
-<pre><code>## Error in `semPaths()`:
-## ! could not find function &quot;semPaths&quot;</code></pre>
+<p><img src="isem_files/figure-html/unnamed-chunk-370-1.png" alt="" width="672" /></p>
 <hr />
 <p>When two models are nested, we can use a <span class="math inline">\(\Delta \chi^2\)</span> test to check if the nested model fits <em>significantly worse</em>
 than its parent model. Whenever we place constraints on the model, the fit will deteriorate, but we want to know if the
@@ -1695,7 +1692,7 @@ one-factor model version <a href="at-home-exercises-4.html#estimateCfa1F">5.3.6<
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="in-class-exercises-4.html#cb220-1" tabindex="-1"></a><span class="fu">anova</span>(out_1f, out_3f)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="in-class-exercises-4.html#cb209-1" tabindex="-1"></a><span class="fu">anova</span>(out_1f, out_3f)</span></code></pre></div>
 <pre><code>## 
 ## Chi-Squared Difference Test
 ## 
@@ -1757,14 +1754,14 @@ three-factor model fits significantly better than the one-factor model
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="in-class-exercises-4.html#cb222-1" tabindex="-1"></a><span class="fu">anova</span>(out_trust_att, out_trust_att3)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="in-class-exercises-4.html#cb211-1" tabindex="-1"></a><span class="fu">anova</span>(out_trust_att, out_trust_att3)</span></code></pre></div>
 <pre><code>## 
 ## Chi-Squared Difference Test
 ## 
 ##                 Df     AIC     BIC Chisq Chisq diff   RMSEA Df diff Pr(&gt;Chisq)
 ## out_trust_att3 636 1422116 1422890 19151                                      
 ## out_trust_att  638 1430291 1431050 27330     8179.2 0.59074       2  &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="in-class-exercises-4.html#cb224-1" tabindex="-1"></a><span class="fu">fitMeasures</span>(out_trust_att3)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="in-class-exercises-4.html#cb213-1" tabindex="-1"></a><span class="fu">fitMeasures</span>(out_trust_att3)</span></code></pre></div>
 <pre><code>##                  npar                  fmin                 chisq 
 ##               105.000                 0.817             19150.640 
 ##                    df                pvalue        baseline.chisq 
@@ -1847,16 +1844,16 @@ Immigration</em> factors.</li>
 Click to show code
 </summary>
 <p>First, we’ll define a syntax snippet to enforce the constraints.</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="in-class-exercises-4.html#cb226-1" tabindex="-1"></a>constraints <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb226-2"><a href="in-class-exercises-4.html#cb226-2" tabindex="-1"></a><span class="st">inst ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
-<span id="cb226-3"><a href="in-class-exercises-4.html#cb226-3" tabindex="-1"></a><span class="st">sat  ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
-<span id="cb226-4"><a href="in-class-exercises-4.html#cb226-4" tabindex="-1"></a><span class="st">pol  ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
-<span id="cb226-5"><a href="in-class-exercises-4.html#cb226-5" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="in-class-exercises-4.html#cb215-1" tabindex="-1"></a>constraints <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb215-2"><a href="in-class-exercises-4.html#cb215-2" tabindex="-1"></a><span class="st">inst ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
+<span id="cb215-3"><a href="in-class-exercises-4.html#cb215-3" tabindex="-1"></a><span class="st">sat  ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
+<span id="cb215-4"><a href="in-class-exercises-4.html#cb215-4" tabindex="-1"></a><span class="st">pol  ~~ 0*immi + 0*social + 0*refugee + 0*cult + 0*econ</span></span>
+<span id="cb215-5"><a href="in-class-exercises-4.html#cb215-5" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
 <p>Now, we’ll add the constraint syntax to the CFA syntax.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="in-class-exercises-4.html#cb227-1" tabindex="-1"></a>mod_trust_att0 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att, constraints, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="in-class-exercises-4.html#cb216-1" tabindex="-1"></a>mod_trust_att0 <span class="ot">&lt;-</span> <span class="fu">paste</span>(mod_trust_att, constraints, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <p>Finally, we’ll estimate and summarize the restricted model.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="in-class-exercises-4.html#cb228-1" tabindex="-1"></a>out_trust_att0 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att0, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb228-2"><a href="in-class-exercises-4.html#cb228-2" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att0, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="in-class-exercises-4.html#cb217-1" tabindex="-1"></a>out_trust_att0 <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_trust_att0, <span class="at">data =</span> ess, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb217-2"><a href="in-class-exercises-4.html#cb217-2" tabindex="-1"></a><span class="fu">summary</span>(out_trust_att0, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 48 iterations
 ## 
 ##   Estimator                                         ML
@@ -2094,7 +2091,7 @@ between the compared models.</li>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="in-class-exercises-4.html#cb230-1" tabindex="-1"></a><span class="fu">anova</span>(out_trust_att, out_trust_att0)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="in-class-exercises-4.html#cb219-1" tabindex="-1"></a><span class="fu">anova</span>(out_trust_att, out_trust_att0)</span></code></pre></div>
 <pre><code>## 
 ## Chi-Squared Difference Test
 ## 
