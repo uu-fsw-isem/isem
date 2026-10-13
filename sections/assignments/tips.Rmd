@@ -1,4 +1,4 @@
-## Elaboration & Tips {-}
+## Elaboration & Tips {- #tips}
 
 ---
 

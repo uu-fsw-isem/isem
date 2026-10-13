@@ -109,17 +109,17 @@ To evaluate these hypotheses, we will use **lavaan** to estimate the following m
 ```{r, echo = FALSE}
 modex <-
 '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ y_m21 * ProSoc + y_m22 * Aggr + Emp + ParAtt + PeerAtt
 
-## Equations for stage 2 mediators:
+# Equations for stage 2 mediators:
 ProSoc ~ m21_x2 * PeerAtt + ParAtt + m21_m1 * Emp
 Aggr ~ m22_x2 * PeerAtt + ParAtt + m22_m1 * Emp
 
-## Equation for stage 1 mediator:
+# Equation for stage 1 mediator:
 Emp ~ ParAtt + m1_x2 * PeerAtt
 
-## Covariances:
+# Covariances:
 ProSoc ~~ Aggr
 ParAtt ~~ PeerAtt
 '
@@ -166,17 +166,17 @@ Specify the lavaan model syntax implied by the path diagram shown above.
 
 ```{r}
 mod0 <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ ProSoc + Aggr + Emp + ParAtt + PeerAtt
 
-## Equations for stage 2 mediators:
+# Equations for stage 2 mediators:
 ProSoc ~ PeerAtt + ParAtt + Emp
 Aggr ~ PeerAtt + ParAtt + Emp
 
-## Equation for stage 1 mediator:
+# Equation for stage 1 mediator:
 Emp ~ ParAtt + PeerAtt
 
-## Covariances:
+# Covariances:
 ProSoc ~~ Aggr
 ParAtt ~~ PeerAtt
 '
@@ -255,21 +255,21 @@ will label the individual estimates in terms of the short variable names used in
 
 ```{r}
 mod <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ y_m21 * ProSoc + y_m22 * Aggr + Emp + ParAtt + PeerAtt
 
-## Equations for stage 2 mediators:
+# Equations for stage 2 mediators:
 ProSoc ~ m21_x2 * PeerAtt + ParAtt + m21_m1 * Emp
 Aggr ~ m22_x2 * PeerAtt + ParAtt + m22_m1 * Emp
 
-## Equation for stage 1 mediator:
+# Equation for stage 1 mediator:
 Emp ~ ParAtt + m1_x2 * PeerAtt
 
-## Covariances:
+# Covariances:
 ProSoc ~~ Aggr
 ParAtt ~~ PeerAtt
 
-## Indirect effects:
+# Indirect effects:
 ie_pro := m1_x2 * m21_m1 * y_m21
 ie_agg := m1_x2 * m22_m1 * y_m22
 '
@@ -346,13 +346,13 @@ Re-estimate the model from \@ref(w3ctest) using 1000 bootstrap samples.
   <summary>Click to show code</summary>
 
 ```{r boot_estimate, cache = TRUE}
-## Set a seed to get replicable bootstrap samples:
+# Set a seed to get replicable bootstrap samples:
 set.seed(235711)
 
-## Estimate the model with bootstrapping:
+# Estimate the model with bootstrapping:
 out_boot <- sem(mod, data = seData, se = "bootstrap", bootstrap = 1000)
 
-## Summarize the model:
+# Summarize the model:
 summary(out_boot)
 ```
 
@@ -657,16 +657,16 @@ for the model from \@ref(olsFit).
 ```{r}
 library(rockchalk)
 
-## Estimate and plot simple slopes:
+# Estimate and plot simple slopes:
 psOut <- plotSlopes(olsFit,
                     plotx    = "success", 
                     modx     = "disillusion",
                     modxVals = "std.dev")
 
-## Test the simple slopes:
+# Test the simple slopes:
 tsOut <- testSlopes(psOut)
 
-## View the results:
+# View the results:
 tsOut$hypotests
 ```
 
@@ -767,24 +767,24 @@ Probe the interaction from \@ref(pathFit) using *semTools* utilities.
 ```{r}
 library(semTools)
 
-## Define the conditional values at which to calculate simple slopes:
+# Define the conditional values at which to calculate simple slopes:
 condVals <- summarise(outlook,
                       "m-sd" = mean(disillusion) - sd(disillusion),
                       mean = mean(disillusion),
                       "m+sd" = mean(disillusion) + sd(disillusion)
                       ) |> unlist()
 
-## Compute simple slopes and intercepts:
+# Compute simple slopes and intercepts:
 ssOut <- probe2WayMC(pathFit,
                      nameX    = c("success", "disillusion", "success:disillusion"),
                      nameY    = "progress",
                      modVar   = "disillusion",
                      valProbe = condVals)
 
-## Check the results:
+# Check the results:
 ssOut
 
-## Visualize the simple slopes:
+# Visualize the simple slopes:
 plotProbe(ssOut,
           xlim = range(outlook$success),
           xlab = "Ease of Personal Success",

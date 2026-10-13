@@ -53,6 +53,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -175,24 +177,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i>Assignments</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
 <ul>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html"><i class="fa fa-check"></i>Procedures</a>
 <ul>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#formatting"><i class="fa fa-check"></i>Formatting</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#length"><i class="fa fa-check"></i>Length</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#submission-2"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -545,10 +548,10 @@ week.</p>
 Click to show code
 </summary>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="at-home-exercises-2.html#cb66-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb66-2"><a href="at-home-exercises-2.html#cb66-2" tabindex="-1"></a><span class="st">## Equation for outcome:</span></span>
+<span id="cb66-2"><a href="at-home-exercises-2.html#cb66-2" tabindex="-1"></a><span class="st"># Equation for outcome:</span></span>
 <span id="cb66-3"><a href="at-home-exercises-2.html#cb66-3" tabindex="-1"></a><span class="st">SelfEst ~ Emp + PeerAtt</span></span>
 <span id="cb66-4"><a href="at-home-exercises-2.html#cb66-4" tabindex="-1"></a></span>
-<span id="cb66-5"><a href="at-home-exercises-2.html#cb66-5" tabindex="-1"></a><span class="st">## Equation for the mediator:</span></span>
+<span id="cb66-5"><a href="at-home-exercises-2.html#cb66-5" tabindex="-1"></a><span class="st"># Equation for the mediator:</span></span>
 <span id="cb66-6"><a href="at-home-exercises-2.html#cb66-6" tabindex="-1"></a><span class="st">Emp ~ PeerAtt</span></span>
 <span id="cb66-7"><a href="at-home-exercises-2.html#cb66-7" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
 </details>
@@ -655,13 +658,13 @@ hypothesized IE from <code>PeerAtt</code> to <code>SelfEst</code>.</p>
 Click to show code
 </summary>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="at-home-exercises-2.html#cb70-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb70-2"><a href="at-home-exercises-2.html#cb70-2" tabindex="-1"></a><span class="st">## Equation for outcome:</span></span>
+<span id="cb70-2"><a href="at-home-exercises-2.html#cb70-2" tabindex="-1"></a><span class="st"># Equation for outcome:</span></span>
 <span id="cb70-3"><a href="at-home-exercises-2.html#cb70-3" tabindex="-1"></a><span class="st">SelfEst ~ b * Emp + PeerAtt</span></span>
 <span id="cb70-4"><a href="at-home-exercises-2.html#cb70-4" tabindex="-1"></a></span>
-<span id="cb70-5"><a href="at-home-exercises-2.html#cb70-5" tabindex="-1"></a><span class="st">## Equation for mediator:</span></span>
+<span id="cb70-5"><a href="at-home-exercises-2.html#cb70-5" tabindex="-1"></a><span class="st"># Equation for mediator:</span></span>
 <span id="cb70-6"><a href="at-home-exercises-2.html#cb70-6" tabindex="-1"></a><span class="st">Emp ~ a * PeerAtt</span></span>
 <span id="cb70-7"><a href="at-home-exercises-2.html#cb70-7" tabindex="-1"></a></span>
-<span id="cb70-8"><a href="at-home-exercises-2.html#cb70-8" tabindex="-1"></a><span class="st">## Indirect effect:</span></span>
+<span id="cb70-8"><a href="at-home-exercises-2.html#cb70-8" tabindex="-1"></a><span class="st"># Indirect effect:</span></span>
 <span id="cb70-9"><a href="at-home-exercises-2.html#cb70-9" tabindex="-1"></a><span class="st">ie := a * b </span></span>
 <span id="cb70-10"><a href="at-home-exercises-2.html#cb70-10" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
 <details>
@@ -772,13 +775,13 @@ attachment</em>?</li>
 Click to show code
 </summary>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="at-home-exercises-2.html#cb73-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb73-2"><a href="at-home-exercises-2.html#cb73-2" tabindex="-1"></a><span class="st">## Equation for outcome:</span></span>
+<span id="cb73-2"><a href="at-home-exercises-2.html#cb73-2" tabindex="-1"></a><span class="st"># Equation for outcome:</span></span>
 <span id="cb73-3"><a href="at-home-exercises-2.html#cb73-3" tabindex="-1"></a><span class="st">SelfEst ~ b * Emp + c1 * ParAtt + c2 * PeerAtt</span></span>
 <span id="cb73-4"><a href="at-home-exercises-2.html#cb73-4" tabindex="-1"></a></span>
-<span id="cb73-5"><a href="at-home-exercises-2.html#cb73-5" tabindex="-1"></a><span class="st">## Equation for mediator:</span></span>
+<span id="cb73-5"><a href="at-home-exercises-2.html#cb73-5" tabindex="-1"></a><span class="st"># Equation for mediator:</span></span>
 <span id="cb73-6"><a href="at-home-exercises-2.html#cb73-6" tabindex="-1"></a><span class="st">Emp ~ a1 * ParAtt + a2 * PeerAtt</span></span>
 <span id="cb73-7"><a href="at-home-exercises-2.html#cb73-7" tabindex="-1"></a></span>
-<span id="cb73-8"><a href="at-home-exercises-2.html#cb73-8" tabindex="-1"></a><span class="st">## Covariance:</span></span>
+<span id="cb73-8"><a href="at-home-exercises-2.html#cb73-8" tabindex="-1"></a><span class="st"># Covariance:</span></span>
 <span id="cb73-9"><a href="at-home-exercises-2.html#cb73-9" tabindex="-1"></a><span class="st">ParAtt ~~ PeerAtt</span></span>
 <span id="cb73-10"><a href="at-home-exercises-2.html#cb73-10" tabindex="-1"></a></span>
 <span id="cb73-11"><a href="at-home-exercises-2.html#cb73-11" tabindex="-1"></a><span class="st">ie_ParAtt  := a1 * b</span></span>
@@ -915,7 +918,7 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="at-home-exercises-2.html#cb76-1" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
 <span id="cb76-2"><a href="at-home-exercises-2.html#cb76-2" tabindex="-1"></a></span>
-<span id="cb76-3"><a href="at-home-exercises-2.html#cb76-3" tabindex="-1"></a><span class="do">## Convert &#39;VIEWCAT&#39; to a factor:</span></span>
+<span id="cb76-3"><a href="at-home-exercises-2.html#cb76-3" tabindex="-1"></a><span class="co"># Convert &#39;VIEWCAT&#39; to a factor:</span></span>
 <span id="cb76-4"><a href="at-home-exercises-2.html#cb76-4" tabindex="-1"></a>sesam2 <span class="ot">&lt;-</span></span>
 <span id="cb76-5"><a href="at-home-exercises-2.html#cb76-5" tabindex="-1"></a>  sesam2 <span class="sc">|&gt;</span></span>
 <span id="cb76-6"><a href="at-home-exercises-2.html#cb76-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">VIEWCAT =</span> <span class="fu">factor</span>(VIEWCAT))</span>
@@ -930,7 +933,7 @@ Click to show code
 <span id="cb76-15"><a href="at-home-exercises-2.html#cb76-15" tabindex="-1"></a><span class="co">#                                      &quot;4-5 times per week&quot;,</span></span>
 <span id="cb76-16"><a href="at-home-exercises-2.html#cb76-16" tabindex="-1"></a><span class="co">#                                      &quot;&gt; 5 times per week&quot;)))</span></span>
 <span id="cb76-17"><a href="at-home-exercises-2.html#cb76-17" tabindex="-1"></a></span>
-<span id="cb76-18"><a href="at-home-exercises-2.html#cb76-18" tabindex="-1"></a><span class="do">## Check the reference group:</span></span>
+<span id="cb76-18"><a href="at-home-exercises-2.html#cb76-18" tabindex="-1"></a><span class="co"># Check the reference group:</span></span>
 <span id="cb76-19"><a href="at-home-exercises-2.html#cb76-19" tabindex="-1"></a><span class="fu">levels</span>(sesam2<span class="sc">$</span>VIEWCAT)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;</code></pre>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="at-home-exercises-2.html#cb78-1" tabindex="-1"></a><span class="fu">contrasts</span>(sesam2<span class="sc">$</span>VIEWCAT)</span></code></pre></div>
@@ -1014,11 +1017,11 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="at-home-exercises-2.html#cb83-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb83-2"><a href="at-home-exercises-2.html#cb83-2" tabindex="-1"></a></span>
-<span id="cb83-3"><a href="at-home-exercises-2.html#cb83-3" tabindex="-1"></a><span class="do">## Add aes(..., color = VIEWCAT) to get different colors for each group:</span></span>
+<span id="cb83-3"><a href="at-home-exercises-2.html#cb83-3" tabindex="-1"></a><span class="co"># Add aes(..., color = VIEWCAT) to get different colors for each group:</span></span>
 <span id="cb83-4"><a href="at-home-exercises-2.html#cb83-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sesam2, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> POSTNUMB, <span class="at">color =</span> VIEWCAT)) <span class="sc">+</span></span>
 <span id="cb83-5"><a href="at-home-exercises-2.html#cb83-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="co"># Add points for scatterplot</span></span>
 <span id="cb83-6"><a href="at-home-exercises-2.html#cb83-6" tabindex="-1"></a></span>
-<span id="cb83-7"><a href="at-home-exercises-2.html#cb83-7" tabindex="-1"></a><span class="do">## Print the plot stored as &#39;p&#39;:</span></span>
+<span id="cb83-7"><a href="at-home-exercises-2.html#cb83-7" tabindex="-1"></a><span class="co"># Print the plot stored as &#39;p&#39;:</span></span>
 <span id="cb83-8"><a href="at-home-exercises-2.html#cb83-8" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="isem_files/figure-html/unnamed-chunk-164-1.png" alt="" width="672" /></p>
 <p>We assigned the global color aesthetic to the <em>VIEWCAT</em> variable, so the points are colored based on their group.</p>
@@ -1040,7 +1043,7 @@ Click to show code
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="at-home-exercises-2.html#cb84-1" tabindex="-1"></a><span class="do">## Add OLS best-fit lines:</span></span>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="at-home-exercises-2.html#cb84-1" tabindex="-1"></a><span class="co"># Add OLS best-fit lines:</span></span>
 <span id="cb84-2"><a href="at-home-exercises-2.html#cb84-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="isem_files/figure-html/unnamed-chunk-165-1.png" alt="" width="672" /></p>
 <p>The global color aesthetic assignment from above carries through to any additional plot elements that we add, including
@@ -1084,7 +1087,7 @@ analysis entailing three steps:</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="at-home-exercises-2.html#cb85-1" tabindex="-1"></a><span class="do">## Estimate the additive model a view the results:</span></span>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="at-home-exercises-2.html#cb85-1" tabindex="-1"></a><span class="co"># Estimate the additive model a view the results:</span></span>
 <span id="cb85-2"><a href="at-home-exercises-2.html#cb85-2" tabindex="-1"></a>results_add <span class="ot">&lt;-</span> <span class="fu">lm</span>(POSTNUMB <span class="sc">~</span> VIEWCAT <span class="sc">+</span> AGE, <span class="at">data =</span> sesam2)</span>
 <span id="cb85-3"><a href="at-home-exercises-2.html#cb85-3" tabindex="-1"></a><span class="fu">summary</span>(results_add)</span></code></pre></div>
 <pre><code>## 
@@ -1108,7 +1111,7 @@ Click to show code
 ## Residual standard error: 10.94 on 174 degrees of freedom
 ## Multiple R-squared:  0.2995, Adjusted R-squared:  0.2834 
 ## F-statistic:  18.6 on 4 and 174 DF,  p-value: 9.642e-13</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="at-home-exercises-2.html#cb87-1" tabindex="-1"></a><span class="do">## Estimate the moderated model and view the results:</span></span>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="at-home-exercises-2.html#cb87-1" tabindex="-1"></a><span class="co"># Estimate the moderated model and view the results:</span></span>
 <span id="cb87-2"><a href="at-home-exercises-2.html#cb87-2" tabindex="-1"></a>results_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(POSTNUMB <span class="sc">~</span> VIEWCAT <span class="sc">*</span> AGE, <span class="at">data =</span> sesam2)</span>
 <span id="cb87-3"><a href="at-home-exercises-2.html#cb87-3" tabindex="-1"></a><span class="fu">summary</span>(results_mod)</span></code></pre></div>
 <pre><code>## 
@@ -1135,7 +1138,7 @@ Click to show code
 ## Residual standard error: 10.99 on 171 degrees of freedom
 ## Multiple R-squared:  0.3046, Adjusted R-squared:  0.2762 
 ## F-statistic:  10.7 on 7 and 171 DF,  p-value: 3.79e-11</code></pre>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="at-home-exercises-2.html#cb89-1" tabindex="-1"></a><span class="do">## Test for moderation:</span></span>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="at-home-exercises-2.html#cb89-1" tabindex="-1"></a><span class="co"># Test for moderation:</span></span>
 <span id="cb89-2"><a href="at-home-exercises-2.html#cb89-2" tabindex="-1"></a><span class="fu">anova</span>(results_add, results_mod)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">

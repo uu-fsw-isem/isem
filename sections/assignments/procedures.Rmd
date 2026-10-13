@@ -1,15 +1,15 @@
-## Procedures {-}
+## Procedures {- #procedures}
 
 ---
 
-### Formatting {- #formatting}
+Naturally, you must follow certain formatting guidelines and submission procedures. Failing to correctly follow these
+procedures may negatively impact your grade.
 
-Your assignment submissions must follow certain formatting guidelines. Failing to correctly format your submissions can
-impact your grade.
+### Assignment 1 {- #a1_procedures}
 
-#### Report {-}
+#### Formatting {- #a1_formatting}
 
-You must submit your Assignment 1 report in PDF format. Each report must include your name
+You must submit your Assignment 1 report in PDF format. Your report must include your name on the title page/first page.
 
 Your report should include appendices containing the lavaan syntax used to estimate each model include in the report.
 Include only the lavaan syntax string and the call to the estimation function used to fit the model (e.g., `cfa()`,
@@ -48,9 +48,82 @@ pathOut <- sem(pathOut, data = dat1)
 summary(pathOut)
 ```
 
-#### Syntax File {- #analysis_script}
+#### Length {-}
 
-You must also submit an executable script containing the code used for your analyses.
+You may use as many words as necessary to adequately explain yourself, but concision and parsimony are encouraged. Note
+that the assignments are **not** intended to be full-blown research projects! The focus should be on the definition of
+your model, how this model relates to theory (introduction), and what you have learned from your estimated model
+(discussion).
+
+You should be able to get the job done in fewer than 10 pages of text (excluding title page, figures, appendices, and
+references).
+
+#### Submission {-}
+
+You will submit your A1 report through Brightspace.
+
+- You can find a submission portal in the "Assignments" section of the Brightspace page.
+- If something goes wrong with the submission, or you notice a mistake (before the deadline) that you want to correct,
+you may upload a new version of your report. 
+   - We will grade the final submitted version.
+- The submissions will be screened with *TurnItIn* to check for plagiarism.
+
+---
+
+### Assignment 2 {- #a2_procedures}
+
+#### Poster {-}
+
+You will report the results of your A2 analysis via a conference-style poster presentation. This poster presentation
+represents the main way that we'll evaluate your work. So, you should think of the poster and its presentation as your
+main A2 "submission".
+
+Your poster should follow conventional layout/formatting guidelines for a scientific research poster.
+
+- As with the A1 report, you're not required to follow any particular style guidelines (e.g., APA, IEEE). But, you must
+employ *some* consistent style and structure. Pick a convention that you like, and apply that convention consistently.
+- Pay attention to the visual design and layout of your poster. Honestly, creating a good poster is just as much a
+graphic design problem as it is a scientific communication problem. Set aside some dedicated time specifically for
+editing the visual design and layout.
+- Your first draft will be hot garbage, and that's fine. Good writing is rewriting and good design is redesign.
+
+The following resources provide some help guidance.
+
+- [Presentation and publication skills: How to prepare a scientific poster](https://doi-org.utrechtuniversity.idm.oclc.org/10.1016/j.clnesp.2024.06.056)
+- [Academic Skills Human Geography and Spatial Planning: Poster Presentation](https://handboeksgpl.sites.uu.nl/other-forms-of-knowledge-exchange/poster-presentation/?lang=en)
+- [How to Create a Research Poster](https://guides.nyu.edu/posters)
+
+#### Supplementary Materials {-}
+
+In addition to the poster presentation, you will submit a packet of supporting, supplementary material.
+
+***Details coming soon!***
+
+#### Submission {-}
+
+You will present your poster during the in-person poster session. **Attendance is obligatory!** This poster session will
+be highly interactive. In addition to presenting your own work, you will also evaluate your classmates presentations.
+
+- You must participate in this poster session to receive credit for A2.
+- The above requirement holds for everyone, regardless of how much you contributed to the analysis and/or creating the poster.
+- If you do not attend the poster session, you will not receive a grade for A2, and you will need to resit A2.
+  - If any of your groupmates miss the poster session, their absence won't affect your grade.
+
+You will submit your supplementary material packet via Brightspace.
+
+- You can find a submission portal in the "Assignments" section of the Brightspace page.
+- You will submit only one packet per group.
+  - Pick one group member as the "Designated Submitter" to avoid redundant/missing uploads.
+- If something goes wrong with the submission, or you notice a mistake (before the deadline) that you want to correct,
+you may upload a new version of your report. 
+   - We will grade the final submitted version.
+- The submissions will be screened with *TurnItIn* to check for plagiarism.
+
+---
+
+### Syntax File {- #analysis_script}
+
+For both assignments, you must also submit an executable script containing the code used for your analyses.
 
 - If you used [**KnitR**][knitr] to embed your analysis code in your report, you may submit the source code that
 generates your report (i.e., an RMD [R Markdown], QMD [Quarto], or RNW [LaTeX] file).
@@ -69,27 +142,21 @@ Clean the script before submitting.
 
 ---
 
-### Length {-}
+### GenAI disclosure statement {-}
 
-You may use as many words as necessary to adequately explain yourself, but concision and parsimony are encouraged. Note
-that the assignments are **not** intended to be full-blown research papers! The focus should be on the definition of
-your model, how this model relates to theory (introduction), and what you have learned from your estimated model
-(discussion).
+Naturally, all of the [course policies on GenAI](#ai_policy) also apply to the data analysis assignments. In addition to
+these general policies, you must include a GenAI disclosure statement in each of your assignments.
 
-You should be able to get the job done in fewer than 10 pages of text (excluding title page, figures, appendices, and
-references).
+You are free to use AI tools like ChatGPT, Claude, or CoPilot, but you must cite the tools you used in the same way that
+you would cite any other software. As with citing any other source, properly citing AI tools both attributes the
+appropriate credit to the tool’s developers and helps you clearly and accurately describe your own work. In addition to
+providing a valid citation, you must also explain how you used the AI tool. Specifically, did you use AI to:
 
----
+1. Create new content (e.g., use ChatGPT to draft some parts of the text)
+1. Modify content that you created (e.g., use Claude to debug your R code)
 
-### Submission {-}
-
-You will submit your A1 report through Brightspace.
-
-- You can find a submission portal in the "Assignments" section of the Brightspace page.
-- If something goes wrong with the submission, or you notice a mistake (before the deadline) that you want to correct,
-you may upload a new version of your report. 
-   - We will grade the final submitted version.
-- The submissions will be screened with *TurnItIn* to check for plagiarism.
+For A1, provide this information in a separate *GenAI Disclosure Statement* section at the end of your report. For A2,
+include a similar statement as part of your supplementary material packet.
 
 ---
 
@@ -132,21 +199,6 @@ your future courses and/or career.
 
 However, this format also assumes that you complete the assignments in good faith. So, I simply ask that you hold up
 your end of the bargain, and submit your original work to show us what you've learned.
-
-#### GenAI disclosure statement {-}
-
-Naturally, all of the [course policies on GenAI](#ai_policy) also apply to the data analysis assignments. In addition to
-these general policies, you must include a GenAI disclosure statement in each of your assignments.
-
-You are free to use AI tools like ChatGPT, Claude, or CoPilot, but you must cite the tools you used in the same way that
-you would cite any other software. As with citing any other source, properly citing AI tools both attributes the
-appropriate credit to the tool’s developers and helps you clearly and accurately describe your own work. In addition to
-providing a valid citation, you must also explain how you used the AI tool. Specifically, did you use AI to:
-
-1. Create new content (e.g., use ChatGPT to draft some parts of the text)
-1. Modify content that you created (e.g., use Claude to debug your R code)
-
-Provide this information in a separate *GenAI Disclosure Statement* section at the end of your report.
 
 #### Strict stuff {-}
 

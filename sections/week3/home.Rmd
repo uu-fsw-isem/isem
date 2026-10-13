@@ -109,10 +109,10 @@ Draw a path model (on paper) that can be used to test the above hypotheses.
   
 ```{r echo=FALSE}
 mod <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ Emp + PeerAtt
 
-## Equation for stage 1 mediator:
+# Equation for stage 1 mediator:
 Emp ~ PeerAtt
 '
 
@@ -153,10 +153,10 @@ week.
   
 ```{r}
 mod <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ Emp + PeerAtt
 
-## Equation for the mediator:
+# Equation for the mediator:
 Emp ~ PeerAtt
 '
 ```
@@ -254,13 +254,13 @@ hypothesized IE from `PeerAtt` to `SelfEst`.
   
 ```{r}
 mod <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ b * Emp + PeerAtt
 
-## Equation for mediator:
+# Equation for mediator:
 Emp ~ a * PeerAtt
 
-## Indirect effect:
+# Indirect effect:
 ie := a * b 
 '
   
@@ -351,13 +351,13 @@ Run the path model needed to test the research questions listed above.
   
 ```{r}
 mod <- '
-## Equation for outcome:
+# Equation for outcome:
 SelfEst ~ b * Emp + c1 * ParAtt + c2 * PeerAtt
 
-## Equation for mediator:
+# Equation for mediator:
 Emp ~ a1 * ParAtt + a2 * PeerAtt
 
-## Covariance:
+# Covariance:
 ParAtt ~~ PeerAtt
 
 ie_ParAtt  := a1 * b
@@ -474,7 +474,7 @@ Convert *VIEWCAT* into a factor.
 ```{r}
 library(forcats)
 
-## Convert 'VIEWCAT' to a factor:
+# Convert 'VIEWCAT' to a factor:
 sesam2 <-
   sesam2 |>
   mutate(VIEWCAT = factor(VIEWCAT))
@@ -489,7 +489,7 @@ sesam2 <-
 #                                      "4-5 times per week",
 #                                      "> 5 times per week")))
 
-## Check the reference group:
+# Check the reference group:
 levels(sesam2$VIEWCAT)
 contrasts(sesam2$VIEWCAT)
 
@@ -585,11 +585,11 @@ argument of the `aes()` function in `ggplot()`.
 ```{r}
 library(ggplot2)
 
-## Add aes(..., color = VIEWCAT) to get different colors for each group:
+# Add aes(..., color = VIEWCAT) to get different colors for each group:
 p <- ggplot(sesam2, aes(x = AGE, y = POSTNUMB, color = VIEWCAT)) +
   geom_point() # Add points for scatterplot
 
-## Print the plot stored as 'p':
+# Print the plot stored as 'p':
 p
 ```
 
@@ -613,7 +613,7 @@ Add linear regression lines for each group to the above scatterplot.
   <summary>Click to show code</summary>
 
 ```{r}
-## Add OLS best-fit lines:
+# Add OLS best-fit lines:
 p + geom_smooth(method = "lm", se = FALSE)
 ```
 
@@ -664,15 +664,15 @@ Conduct the hierarchical regression analysis described above.
   <summary>Click to show code</summary>
 
 ```{r}
-## Estimate the additive model a view the results:
+# Estimate the additive model a view the results:
 results_add <- lm(POSTNUMB ~ VIEWCAT + AGE, data = sesam2)
 summary(results_add)
 
-## Estimate the moderated model and view the results:
+# Estimate the moderated model and view the results:
 results_mod <- lm(POSTNUMB ~ VIEWCAT * AGE, data = sesam2)
 summary(results_mod)
 
-## Test for moderation:
+# Test for moderation:
 anova(results_add, results_mod)
 ```
 

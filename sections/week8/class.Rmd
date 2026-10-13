@@ -113,16 +113,16 @@ Test *configural*, *weak*, and *strong* invariance using the multiple-group CFA 
 library(lavaan)
 library(semTools) # provides the compareFit() function
 
-## Define the syntax for the CFA model:
+# Define the syntax for the CFA model:
 cfaMod <- 'grief =~ b1pss1 + b2pss2 + b3pss3 + b4pss4 + b5pss5'
 
-## Estimate the configural model:
+# Estimate the configural model:
 configOut <- cfa(cfaMod, data = pgd, group = "Kin2")
 
-## Estimate the weak invariance model:
+# Estimate the weak invariance model:
 weakOut <- cfa(cfaMod, data = pgd, group = "Kin2", group.equal = "loadings")
 
-## Estimate the strong invariance model:
+# Estimate the strong invariance model:
 strongOut <- cfa(cfaMod,
                  data = pgd,
                  group = "Kin2",
@@ -133,7 +133,7 @@ summary(configOut)
 summary(weakOut)
 summary(strongOut)
 
-## Test invariance through model comparison tests:
+# Test invariance through model comparison tests:
 compareFit(configOut, weakOut, strongOut) |> summary()
 ```
 
@@ -231,17 +231,17 @@ Use the strongly invariant model from \@ref(miTesting) to test the latent mean d
   <summary>Click to show code</summary>
 
 ```{r, paged.print = FALSE}
-## Estimate the model with the latent means equated:
+# Estimate the model with the latent means equated:
 resOut <- cfa(cfaMod,
               data = pgd,
               group = "Kin2",
               group.equal = c("loadings", "intercepts", "means")
               )
 
-## Check the results:
+# Check the results:
 summary(resOut)
 
-## Test the mean differences via a LRT:
+# Test the mean differences via a LRT:
 anova(strongOut, resOut)
 ```
 
@@ -317,7 +317,7 @@ tora_cfa <- '
   control   =~ control_1 + control_2 + control_3
 '
 
-## Estimate the models:
+# Estimate the models:
 config <- cfa(tora_cfa, data = condom, group = "sex")
 weak <- cfa(tora_cfa, data = condom, group = "sex", group.equal = "loadings")
 strong <- cfa(tora_cfa, 
@@ -326,12 +326,12 @@ strong <- cfa(tora_cfa,
               group.equal = c("loadings", "intercepts")
               )
 
-## Check that everything went well:
+# Check that everything went well:
 summary(config)
 summary(weak)
 summary(strong)
 
-## Test measurement invariance:
+# Test measurement invariance:
 compareFit(config, weak, strong) |> summary()
 ```
 
@@ -417,20 +417,20 @@ Estimate the extended TORA model from \@ref(updatedModel) as a multiple-group mo
   <summary>Click to show code</summary>
   
 ```{r}
-## Add the structural paths to the model:
+# Add the structural paths to the model:
 tora_sem <- paste(tora_cfa,
                   'intent ~ attitudes + norms
                    behavior ~ intent + control',
                   sep = '\n')
 
-## Estimate the model:
+# Estimate the model:
 toraOut <- sem(tora_sem, 
                data = condom, 
                group = "sex", 
                group.equal = c("loadings", "intercepts")
                )
 
-## Check the results:
+# Check the results:
 summary(toraOut, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
 ```
 
@@ -447,15 +447,15 @@ Conduct an omnibus test to check if `sex` moderates any of the latent regression
   <summary>Click for explanation</summary>
 
 ```{r, paged.print = FALSE}
-## Estimate a restricted model wherein all latent regression paths are equated
-## across groups.
+# Estimate a restricted model wherein all latent regression paths are equated
+# across groups.
 toraOut0 <- sem(tora_sem, 
                 data = condom, 
                 group = "sex", 
                 group.equal = c("loadings", "intercepts", "regressions")
                 )
 
-## Test the constraints:
+# Test the constraints:
 anova(toraOut, toraOut0)
 ```
 
@@ -495,19 +495,19 @@ Conduct a two-parameter test to check if `sex` moderates the effects of `intent`
   <summary>Click to show code</summary>
 
 ```{r}
-## Add the structural paths to the model and assign labels:
+# Add the structural paths to the model and assign labels:
 tora_sem <- paste(tora_cfa,
                   'intent ~ attitudes + norms
                    behavior ~ c(b1f, b1m) * intent + c(b2f, b2m) * control',
                   sep = '\n')
 
-## Estimate the model with weak invariance constraints:
+# Estimate the model with weak invariance constraints:
 toraOut <- sem(tora_sem, data = condom, group = "sex", group.equal = "loadings")
 
-## Check the results:
+# Check the results:
 summary(toraOut, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
 
-## Test for moderation:
+# Test for moderation:
 lavTestWald(toraOut, "b1f == b1m; b2f == b2m")
 ```
 

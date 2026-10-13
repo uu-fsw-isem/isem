@@ -49,13 +49,13 @@ Convert the *sex* and *political interest* factors into dummy codes.
 ```{r}
 library(dplyr)
 
-## Create a dummy codes by broadcasting a logical test on the factor levels:
+# Create a dummy codes by broadcasting a logical test on the factor levels:
 ess_fin <- mutate(ess_fin,
                   female = ifelse(sex == "Female", 1, 0),
                   hi_pol_interest = ifelse(polintr_bin == "High Interest", 1, 0)
                   )
 
-## Check the results:
+# Check the results:
 with(ess_fin, table(dummy = female, factor = sex))
 with(ess_fin, table(dummy = hi_pol_interest, factor = polintr_bin))
 ```
@@ -93,12 +93,12 @@ The following path diagram shows the intended theoretical model.
 library(semPlot)
 
 mod_sem <- '
-## Define the latent DVs:
+# Define the latent DVs:
 institutions =~ trstlgl + trstplc + trstun + trstep + trstprl
 satisfaction =~ stfhlth + stfedu  + stfeco + stfgov + stfdem
 politicians  =~ pltinvt + pltcare + trstplt
 
-## Specify the structural relations:
+# Specify the structural relations:
 institutions +
 satisfaction +
 politicians ~ female + age + eduyrs + hi_pol_interest + lrscale
@@ -138,12 +138,12 @@ Define the `lavaan` model syntax for the SEM shown above.
 
 ```{r}
 mod_sem <- '
-## Define the latent DVs:
+# Define the latent DVs:
 institutions =~ trstlgl + trstplc + trstun + trstep + trstprl
 satisfaction =~ stfhlth + stfedu  + stfeco + stfgov + stfdem
 politicians  =~ pltinvt + pltcare + trstplt
 
-## Specify the structural relations:
+# Specify the structural relations:
 institutions ~ female + age + eduyrs + hi_pol_interest + lrscale
 satisfaction ~ female + age + eduyrs + hi_pol_interest + lrscale
 politicians  ~ female + age + eduyrs + hi_pol_interest + lrscale
@@ -178,10 +178,10 @@ Estimate the SEM, and summarize the results.
 ```{r}
 library(lavaan)
 
-## Fit the SEM:
+# Fit the SEM:
 out_sem <- sem(mod_sem, data = ess_fin, std.lv = TRUE, fixed.x = FALSE)
 
-## Summarize the results:
+# Summarize the results:
 summary(out_sem, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
 ```
 
@@ -228,20 +228,20 @@ Use the `psych::scoreItems()` function to create mean scores to represent the th
 ```{r}
 library(psych)
 
-## Create a list to define the item-to-score mapping
+# Create a list to define the item-to-score mapping
 scaleKeys <- list(
   ins_score = c("trstlgl", "trstplc", "trstun", "trstep", "trstprl"),
   sat_score = c("stfhlth", "stfedu", "stfeco", "stfgov", "stfdem"),
   pol_score  = c("pltinvt", "pltcare", "trstplt")
-  )
+)
 
-## Create the scale scores
+# Create the scale scores
 scaleScores <- scoreItems(keys = scaleKeys, items = ess_fin, impute = "none")
 
-## If we print the 'scaleScores' object, we get a bunch of interesting psychometric information
+# Print the 'scaleScores' object returns a bunch of interesting psychometric information
 scaleScores
 
-## Add the scores to the ESS dataset
+# Add the scores to the ESS dataset
 ess_fin <- data.frame(ess_fin, scaleScores$scores)
 ```
 
@@ -257,18 +257,18 @@ Use the mean scores you created above to estimate a path analytic version of the
   <summary>Click to show code</summary>
 
 ```{r}
-## Specify the model syntax for the path model:
+# Specify the model syntax for the path model:
 mod_pa <- '
-## Specify the structural relations:
+# Specify the structural relations:
 ins_score ~ female + age + eduyrs + hi_pol_interest + lrscale
 sat_score ~ female + age + eduyrs + hi_pol_interest + lrscale
 pol_score ~ female + age + eduyrs + hi_pol_interest + lrscale
 '
 
-## Fit the path analytic model:
+# Fit the path analytic model:
 out_pa <- sem(mod_pa, data = ess_fin, fixed.x = FALSE)
 
-## Summarize the results:
+# Summarize the results:
 summary(out_pa, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
 ```
 
@@ -293,21 +293,21 @@ a bunch of convenience functions. One of these functions, `partSummary()`, allow
 model summary.
 
 ```{r, eval = FALSE}
-## Source the script that defines the partSummary() convenience function:
+# Source the script that defines the partSummary() convenience function:
 source(here::here("code", "supportFunctions.R"))
 ```
 
 ```{r}
-## View the regression estimates from the SEM:
+# View the regression estimates from the SEM:
 partSummary(out_sem, 8, standardized = TRUE)
 
-## View the regression estimates from the path analysis:
+# View the regression estimates from the path analysis:
 partSummary(out_pa, 7, standardized = TRUE)
 
-## View the R-squared estimates from the SEM:
+# View the R-squared estimates from the SEM:
 partSummary(out_sem, 11, rsquare = TRUE)
 
-## View the R-squared estimates from the SEM:
+# View the R-squared estimates from the SEM:
 partSummary(out_pa, 10, rsquare = TRUE)
 ```
 

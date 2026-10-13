@@ -22,7 +22,7 @@ library(kableExtra)
 
 dataDir <- "data"
 
-## Read the 'ess_round1.rds' data into a data frame called 'ess': 
+# Read the 'ess_round1.rds' data into a data frame called 'ess':
 ess <- readRDS(here::here(dataDir, "ess_round1.rds"))
 
 desc <- c(
@@ -101,10 +101,10 @@ library(tidySEM)
 
 dataDir <- "data"
 
-## Read the 'ess_round1.rds' data into a data frame called 'ess': 
+# Read the 'ess_round1.rds' data into a data frame called 'ess':
 ess <- readRDS(here::here(dataDir, "ess_round1.rds"))
 
-## Inspect the result:
+# Inspect the result:
 dim(ess)
 head(ess)
 descriptives(ess)
@@ -187,13 +187,13 @@ Does the model fit the data well?
   <summary>Click the code</summary>
 
 ```{r}
-## Load the lavaan package:
+# Load the lavaan package:
 library(lavaan)
 
-## Estimate the CFA model:
+# Estimate the CFA model:
 out_3f <- cfa(mod_3f, data = ess, std.lv = TRUE)
 
-## Summarize the fitted model:
+# Summarize the fitted model:
 summary(out_3f, fit.measures = TRUE, standardized = TRUE)
 ```
 
@@ -246,7 +246,7 @@ Consider the factor loadings for the *Trust in Politicians* factor.
 data.frame(
   raw = lavInspect(out_3f, "estimates")$lambda[11:13, 3],
   std = lavInspect(out_3f, "standardized")$lambda[11:13, 3]
-  )
+)
 ```
 
 Hmm...something seem strange, but we need to be careful when evaluating these factor loadings.
@@ -264,7 +264,7 @@ Let's check the scale of the raw indicator variables.
 ```{r}
 ess |>
   select(lavNames(out_3f)) |>
-  tidySEM::descriptives() |> 
+  tidySEM::descriptives() |>
   select(name, mean, sd, min, max)
 ```
 
@@ -327,13 +327,13 @@ Does this model appear to fit better or worse than the three-factor model?
   <summary>Click to show code</summary>
 
 ```{r}
-## Estimate the one factor model:
+# Estimate the one factor model:
 out_1f <- cfa(mod_1f, data = ess, std.lv = TRUE)
 
-## Summarize the results:
+# Summarize the results:
 summary(out_1f)
 
-## Compare fit statistics:
+# Compare fit statistics:
 data.frame(three_factor = fitMeasures(out_3f), one_factor = fitMeasures(out_1f)) |>
   format(scientific = FALSE, digits = 3, drop0trailing = TRUE)
 ```

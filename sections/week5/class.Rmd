@@ -160,28 +160,28 @@ Define the `lavaan` model syntax for the CFA described above.
 
 ```{r}
 mod_trust_att <- '
-## Trust in Institutions:
+# Trust in Institutions:
 inst =~ trstlgl + trstplc + trstun + trstep + trstprl
 
-## Satisfaction with the Political Situation:
+# Satisfaction with the Political Situation:
 sat =~ stfhlth + stfedu  + stfeco + stfgov + stfdem
 
-## Trust in Politicians:
+# Trust in Politicians:
 pol =~ pltinvt + pltcare + trstplt
 
-## Immigration Policy:
+# Immigration Policy:
 immi =~ imrcntr + eimrcnt + eimpcnt + imsmetn + impcntr + imdfetn 
 
-## Social Threat:
+# Social Threat:
 social =~ imbgeco + imbleco + imwbcnt + imwbcrm + imtcjob + imueclt
 
-## Refugee Policy:
+# Refugee Policy:
 refugee =~ gvrfgap + imrsprc + rfgbfml + rfggvfn + rfgawrk + rfgfrpc + shrrfg
 
-## Cultural Threat:
+# Cultural Threat:
 cult =~ qfimchr + qfimwht + pplstrd + vrtrlg
 
-## Economic Threat:
+# Economic Threat:
 econ =~ l*imwgdwn + l*imhecop 
 '
 ```
@@ -208,13 +208,13 @@ Estimate the CFA model you defined above, and summarize the results.
   <summary>Click to show code</summary>
   
 ```{r}
-## Load the lavaan package:
+# Load the lavaan package:
 library(lavaan)
 
-## Estimate the CFA model:
+# Estimate the CFA model:
 out_trust_att <- cfa(mod_trust_att, data = ess, std.lv = TRUE)
 
-## Summarize the fitted model:
+# Summarize the fitted model:
 summary(out_trust_att, fit.measures = TRUE, standardized = TRUE)
 ```
  
@@ -460,10 +460,10 @@ Estimate a modified version of the CFA from \@ref(estimateCfaTrustAtt).
   <summary>Click to show code</summary>
 
 ```{r}
-## Add the residual covariance to the model syntax:
+# Add the residual covariance to the model syntax:
 mod_trust_att2 <- paste(mod_trust_att, "imrcntr ~~ eimrcnt", sep = "\n")
 
-## Estimate and summarize the modified model:
+# Estimate and summarize the modified model:
 out_trust_att2 <- cfa(mod_trust_att2, data = ess, std.lv = TRUE)
 summary(out_trust_att2, fit.measures = TRUE, standardized = TRUE)
 ```
@@ -523,10 +523,10 @@ Estimate a modified version of the CFA from \@ref(estimateCfaTrustAtt).
   <summary>Click to show code</summary>
 
 ```{r}
-## Add the residual covariance to the model syntax:
+# Add the residual covariance to the model syntax:
 mod_trust_att3 <- paste(mod_trust_att2, "trstlgl ~~ trstplc", sep = "\n")
 
-## Estimate and summarize the modified model:
+# Estimate and summarize the modified model:
 out_trust_att3 <- cfa(mod_trust_att3, data = ess, std.lv = TRUE)
 summary(out_trust_att3, fit.measures = TRUE, standardized = TRUE)
 ```
@@ -558,7 +558,7 @@ visual  =~ x1 + x2 + x3
 textual =~ x4 + x5 + x6
 '
 
-hsFit <- cfa(hsMod, data = HolzingerSwineford1939) 
+hsFit <- cfa(hsMod, data = HolzingerSwineford1939)
 
 semPaths(hsFit,
          layout = "tree2",
@@ -623,7 +623,7 @@ estimating all possible associations. Hence, all models are nested within the sa
 tmp        <- rep(0, 6)
 names(tmp) <- lavNames(hsFit)
 
-lav_partable_unrestricted(hsFit) %>% 
+lav_partable_unrestricted(hsFit) %>%
   cfa(data = HolzingerSwineford1939) %>%
   semPaths(layout = "tree",
            sizeMan = 10,
@@ -688,8 +688,8 @@ anova(out_1f, out_3f)
     
 ```{r, echo = FALSE, include = FALSE}
 aOut <- anova(out_1f, out_3f)
-df <- aOut[ , "Df"] |> round()
-x2 <- aOut[ , "Chisq"] |> format(scientific = FALSE)
+df <- aOut[, "Df"] |> round()
+x2 <- aOut[, "Chisq"] |> format(scientific = FALSE)
 dX2 <- aOut[2, "Chisq diff"] |> round(2)
 dDf <- aOut[2, "Df diff"] |> round()
 dP <- prettyPValue(aOut[2, "Pr(>Chisq)"])

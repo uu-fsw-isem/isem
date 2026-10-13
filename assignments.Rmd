@@ -33,8 +33,17 @@ Below, you can find a brief idea of what each assignment will cover.
 - You must pass this first assignment to pass the course.
 - Your grade on the second assignment constitutes your numeric course grade.
 
-The following sections contain detailed guidelines for these analyses/reports.
+The next four sections contain detailed guidelines for these analyses/reports.
 
+- [Assignment Guidelines](#guidelines): Executive summary of the important information
+   - High-level overview of the assignment topics, the required components, and the submission procedures
+- [Elaboration & Tips](#tips): Extended explanations of the important details
+	 - You'll need this information to fully satisfy the requirements listed in the Assignment Guidelines.
+	 - This section also includes some helpful tips.
+- [Procedures](#procedures): The technical requirements
+   - Specific formatting requirements
+   - Details of the submission procedures
+- [Grading](#assignment_grading): Detailed explanation of the grading procedures
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, error = TRUE, results = "asis"}
 # knit_child(here::here("sections", "assignments", "a1.Rmd"),         quiet = TRUE) |> cat(sep = "\n")

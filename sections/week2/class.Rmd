@@ -72,8 +72,8 @@ library(dplyr)
 # Load the `haven` package for reading in SPSS files:
 library(haven)
 
-## Load the 'Sesam.sav' data
-## Use haven::zap_formats() to remove SPSS attributes
+# Load the 'Sesam.sav' data
+# Use haven::zap_formats() to remove SPSS attributes
 sesam <- read_sav(file = "Sesam.sav") |> zap_formats()
 ```
 
@@ -111,7 +111,7 @@ What is the type of each variable?
   <summary>Click to show code</summary>
 
 ```{r}
-## Examine the data structure:
+# Examine the data structure:
 str(sesam)
 ```
 
@@ -198,10 +198,10 @@ sesam |> summarise(mean(ndif), sd(ndif))
 ```{r}
 library(ggplot2)
 
-## Create an empty baseline plot object:
+# Create an empty baseline plot object:
 p <- ggplot(sesam, aes(x = ndif))
 
-## Add some appropriate geoms:
+# Add some appropriate geoms:
 p + geom_histogram()
 p + geom_density()
 p + geom_boxplot()
@@ -235,7 +235,7 @@ useful.
   <summary>Click to show code</summary>
 
 ```{r}
-## Create a scatterplot of the pre- and post-test number knowledge
+# Create a scatterplot of the pre- and post-test number knowledge
 ggplot(sesam, aes(x = prenumb, y = postnumb)) +
   geom_point()
 ```
@@ -286,7 +286,7 @@ hypothesis tests for a correlation coefficients (the base-R `cor()` function onl
 ```{r}
 library(psych)
 
-## Test the correlations using psych::corr.test():
+# Test the correlations using psych::corr.test():
 sesam |>
   select(postnumb, age, prelet, prenumb, prerelat, peabody) |>
   corr.test()
@@ -295,7 +295,7 @@ sesam |>
 
 library(magrittr)
 
-## Test the correlations using multiple cor.test() calls:
+# Test the correlations using multiple cor.test() calls:
 sesam %$% cor.test(postnumb, age)
 sesam %$% cor.test(postnumb, prelet)
 sesam %$% cor.test(postnumb, prenumb)
@@ -443,8 +443,7 @@ Re-estimate the path analytic model you defined in \@ref(syntax1).
   
 *Hint:* You can make the predictors random in, at least, two ways:
     
-1. Modify the model syntax to specify the correlation between `age` and 
-   `prenumb`.
+1. Modify the model syntax to specify the correlation between `age` and `prenumb`.
 1. Add `fixed.x = FALSE` to your `sem()` call.
 
 <details>
@@ -532,7 +531,7 @@ prepare_graph(res,
   prelet ~ age
   prenumb ~ age
   "
-  
+
 res <- lavaan::sem(mod, data = sesam)
 prepare_graph(res,
               layout = get_layout("",    "prerelat", "",
@@ -615,8 +614,7 @@ Use the package `ggplot2` to create a density plot for the variable *RT*.
 
 - What concept are we representing with this plot?
 
-*Hint:* Consider the lap times example from
-[the statistical modeling section](#statistical-modeling) of Lecture 2.
+*Hint:* Consider the lap times example from [the statistical modeling section](#statistical-modeling) of Lecture 2.
 
 <details>
   <summary>Click to show code</summary>
@@ -747,10 +745,10 @@ codes.
   <summary>Click to show code</summary>
 
 ```{r}
-## Specify the model syntax:
+# Specify the model syntax:
 mod <- 'RT ~ 1 + HH + HF'
 
-## Dummy code the factor variable:
+# Dummy code the factor variable:
 drivers2 <- mutate(drivers,
                    ## Create dummy code for "hand-held" condition:
                    HH = ifelse(condition == "hand-held", 1, 0),
@@ -758,10 +756,10 @@ drivers2 <- mutate(drivers,
                    HF = ifelse(condition == "hands-free", 1, 0)
                    )
 
-## Estimate the path model:
+# Estimate the path model:
 lavOut <- sem(mod, data = drivers2)
 
-## Summarize the results:
+# Summarize the results:
 summary(lavOut)
 ```
 
@@ -778,7 +776,7 @@ lavOut2 <- drivers |>
          ) |>
   sem(mod, data = _) # Estimate the model
 
-## Do the two approaches produce the same results?
+# Do the two approaches produce the same results?
 all.equal(
   parameterEstimates(lavOut), 
   parameterEstimates(lavOut2)

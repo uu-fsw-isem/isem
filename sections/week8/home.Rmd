@@ -63,11 +63,11 @@ Convert *VIEWCAT* into a factor.
 ```{r}
 library(dplyr)
 
-## Store the old version for checking:
+# Store the old version for checking:
 tmp <- sesam2$VIEWCAT
 
-## Convert 'VIEWCAT' to a factor:
-sesam2 <- mutate(sesam2, 
+# Convert 'VIEWCAT' to a factor:
+sesam2 <- mutate(sesam2,
                  VIEWCAT = factor(VIEWCAT,
                                   labels = c(
                                     "Rarely/never",
@@ -78,7 +78,7 @@ sesam2 <- mutate(sesam2,
                                   )
                 )
 
-## Check the conversion:
+# Check the conversion:
 table(new = sesam2$VIEWCAT, old = tmp, useNA = "always")
 ```
 
@@ -140,7 +140,7 @@ Estimate the unrestricted path model described above.
 ```{r}
 library(lavaan)
 
-## Estimate the unrestricted model a view the results:
+# Estimate the unrestricted model a view the results:
 out_full <- sem('POSTNUMB ~ 1 + AGE', data = sesam2, group = "VIEWCAT")
 summary(out_full)
 ```
@@ -166,7 +166,7 @@ Estimate the restricted model described above.
   <summary>Click to show code</summary>
 
 ```{r}
-## Estimate the restricted model and view the results:
+# Estimate the restricted model and view the results:
 out_res <- sem('POSTNUMB ~ 1 + c("b1", "b1", "b1", "b1") * AGE',
                data = sesam2,
                group = "VIEWCAT")
@@ -187,7 +187,7 @@ Test for moderation by comparing the full and restricted models from \@ref(fullP
   <summary>Click to show code</summary>
 
 ```{r, paged.print = FALSE}
-## Test for moderation:
+# Test for moderation:
 anova(out_full, out_res)
 ```
 
@@ -249,13 +249,13 @@ Load the *PGDdata2.txt* data.
   <summary>Click to show code</summary>
 
 ```{r}
-## Load the data:
+# Load the data:
 pgd <- read.table(here::here(dataDir, "PGDdata2.txt"),
                   na.strings = "-999",
                   header = TRUE,
                   sep = "\t")
 
-## Check the results:
+# Check the results:
 head(pgd)
 summary(pgd)
 str(pgd)
@@ -279,11 +279,11 @@ Process the PGD data as follows.
   <summary>Click to show code</summary>
 
 ```{r}
-## Process data
+# Process data
 pgd <- mutate(pgd, Kin2 = factor(Kin2, levels = 0:1, labels = c("spouse", "other"))) |>
   filter(!is.na(Kin2))
 
-## Save the processed data
+# Save the processed data
 saveRDS(pgd, here::here(dataDir, "pgd_data.rds"))
 ```
 
@@ -302,10 +302,10 @@ Run a single-group CFA wherein the five scale variables described above indicate
   <summary>Click to show code</summary>
 
 ```{r}
-## Define the model syntax:
+# Define the model syntax:
 cfaMod <- 'grief =~ b1pss1 + b2pss2 + b3pss3 + b4pss4 + b5pss5'
 
-## Estimate the model:
+# Estimate the model:
 out0 <- cfa(cfaMod, data = pgd)
 ```
 
@@ -325,7 +325,7 @@ Summarize the evaluate the fitted CFA
   <summary>Click to show code</summary>
 
 ```{r}
-## Summarize the fitted model:
+# Summarize the fitted model:
 summary(out0, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
 ```
 

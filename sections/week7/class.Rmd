@@ -170,11 +170,11 @@ Estimate the basic TORA model as an SEM, and use the result to evaluate the TORA
 
 ```{r}
 mod_tora1 <- '
-## Define the latent variables:
+# Define the latent variables:
 attitudes =~ attit_1 + attit_2 + attit_3
 norms     =~ norm_1  + norm_2  + norm_3
 
-## Define the structural model:
+# Define the structural model:
 behavior ~ intent
 intent   ~ attitudes + norms
 '
@@ -408,7 +408,7 @@ Use some statistical means of evaluating the most plausible way to include *cont
 One way to tackle this problem is to test the indirect, direct, and total effects.
 
 ```{r boot2, cache = TRUE}
-## Allow for partial mediation:
+# Allow for partial mediation:
 mod1 <- '
 attitudes =~ attit_1   + attit_2   + attit_3
 norms     =~ norm_1    + norm_2    + norm_3
@@ -449,7 +449,7 @@ constraints and check which one best represents the data.
 - The extended TORA model from \@ref(updatedModel) already encodes the non-mediated direct effect.
 
 ```{r, paged.print = FALSE}
-## Force complete mediation:
+# Force complete mediation:
 mod2 <- '
 attitudes =~ attit_1   + attit_2   + attit_3
 norms     =~ norm_1    + norm_2    + norm_3
@@ -459,16 +459,16 @@ behavior ~ intent
 intent   ~ attitudes + norms + control
 '
 
-## Estimate the two restricted models:
+# Estimate the two restricted models:
 out2 <- sem(mod2, data = condom)
 
-## Check the results:
+# Check the results:
 summary(out2)
 
-## Does the full-mediation model fit worse than the partial mediation model?
+# Does the full-mediation model fit worse than the partial mediation model?
 anova(out1, out2)
 
-## Does the no-mediation model fit worse than the partial mediation model?
+# Does the no-mediation model fit worse than the partial mediation model?
 anova(out1, out_tora2)
 ```
 
@@ -496,7 +496,7 @@ We can also use *information criteria* to compare our models. The two most popul
 *Akaike's Information Criterion* (AIC) and the *Bayesian Information Criterion* (BIC).
 
 ```{r}
-## Which model is the most parsimonious representation of the data?
+# Which model is the most parsimonious representation of the data?
 AIC(out1, out2, out_tora2)
 BIC(out1, out2, out_tora2)
 ```

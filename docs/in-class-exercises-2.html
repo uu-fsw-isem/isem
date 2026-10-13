@@ -53,6 +53,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -175,24 +177,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i>Assignments</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
 <ul>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html"><i class="fa fa-check"></i>Procedures</a>
 <ul>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#formatting"><i class="fa fa-check"></i>Formatting</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#length"><i class="fa fa-check"></i>Length</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#submission-2"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -544,17 +547,17 @@ aggression).</p>
 Click to show code
 </summary>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="in-class-exercises-2.html#cb92-1" tabindex="-1"></a>mod0 <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb92-2"><a href="in-class-exercises-2.html#cb92-2" tabindex="-1"></a><span class="st">## Equation for outcome:</span></span>
+<span id="cb92-2"><a href="in-class-exercises-2.html#cb92-2" tabindex="-1"></a><span class="st"># Equation for outcome:</span></span>
 <span id="cb92-3"><a href="in-class-exercises-2.html#cb92-3" tabindex="-1"></a><span class="st">SelfEst ~ ProSoc + Aggr + Emp + ParAtt + PeerAtt</span></span>
 <span id="cb92-4"><a href="in-class-exercises-2.html#cb92-4" tabindex="-1"></a></span>
-<span id="cb92-5"><a href="in-class-exercises-2.html#cb92-5" tabindex="-1"></a><span class="st">## Equations for stage 2 mediators:</span></span>
+<span id="cb92-5"><a href="in-class-exercises-2.html#cb92-5" tabindex="-1"></a><span class="st"># Equations for stage 2 mediators:</span></span>
 <span id="cb92-6"><a href="in-class-exercises-2.html#cb92-6" tabindex="-1"></a><span class="st">ProSoc ~ PeerAtt + ParAtt + Emp</span></span>
 <span id="cb92-7"><a href="in-class-exercises-2.html#cb92-7" tabindex="-1"></a><span class="st">Aggr ~ PeerAtt + ParAtt + Emp</span></span>
 <span id="cb92-8"><a href="in-class-exercises-2.html#cb92-8" tabindex="-1"></a></span>
-<span id="cb92-9"><a href="in-class-exercises-2.html#cb92-9" tabindex="-1"></a><span class="st">## Equation for stage 1 mediator:</span></span>
+<span id="cb92-9"><a href="in-class-exercises-2.html#cb92-9" tabindex="-1"></a><span class="st"># Equation for stage 1 mediator:</span></span>
 <span id="cb92-10"><a href="in-class-exercises-2.html#cb92-10" tabindex="-1"></a><span class="st">Emp ~ ParAtt + PeerAtt</span></span>
 <span id="cb92-11"><a href="in-class-exercises-2.html#cb92-11" tabindex="-1"></a></span>
-<span id="cb92-12"><a href="in-class-exercises-2.html#cb92-12" tabindex="-1"></a><span class="st">## Covariances:</span></span>
+<span id="cb92-12"><a href="in-class-exercises-2.html#cb92-12" tabindex="-1"></a><span class="st"># Covariances:</span></span>
 <span id="cb92-13"><a href="in-class-exercises-2.html#cb92-13" tabindex="-1"></a><span class="st">ProSoc ~~ Aggr</span></span>
 <span id="cb92-14"><a href="in-class-exercises-2.html#cb92-14" tabindex="-1"></a><span class="st">ParAtt ~~ PeerAtt</span></span>
 <span id="cb92-15"><a href="in-class-exercises-2.html#cb92-15" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
@@ -668,21 +671,21 @@ Click to show code
 <p>You can use any labeling scheme that makes sense to you, but I recommend adopting some kind of systematic rule. Here, I
 will label the individual estimates in terms of the short variable names used in the path diagram above.</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="in-class-exercises-2.html#cb95-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
-<span id="cb95-2"><a href="in-class-exercises-2.html#cb95-2" tabindex="-1"></a><span class="st">## Equation for outcome:</span></span>
+<span id="cb95-2"><a href="in-class-exercises-2.html#cb95-2" tabindex="-1"></a><span class="st"># Equation for outcome:</span></span>
 <span id="cb95-3"><a href="in-class-exercises-2.html#cb95-3" tabindex="-1"></a><span class="st">SelfEst ~ y_m21 * ProSoc + y_m22 * Aggr + Emp + ParAtt + PeerAtt</span></span>
 <span id="cb95-4"><a href="in-class-exercises-2.html#cb95-4" tabindex="-1"></a></span>
-<span id="cb95-5"><a href="in-class-exercises-2.html#cb95-5" tabindex="-1"></a><span class="st">## Equations for stage 2 mediators:</span></span>
+<span id="cb95-5"><a href="in-class-exercises-2.html#cb95-5" tabindex="-1"></a><span class="st"># Equations for stage 2 mediators:</span></span>
 <span id="cb95-6"><a href="in-class-exercises-2.html#cb95-6" tabindex="-1"></a><span class="st">ProSoc ~ m21_x2 * PeerAtt + ParAtt + m21_m1 * Emp</span></span>
 <span id="cb95-7"><a href="in-class-exercises-2.html#cb95-7" tabindex="-1"></a><span class="st">Aggr ~ m22_x2 * PeerAtt + ParAtt + m22_m1 * Emp</span></span>
 <span id="cb95-8"><a href="in-class-exercises-2.html#cb95-8" tabindex="-1"></a></span>
-<span id="cb95-9"><a href="in-class-exercises-2.html#cb95-9" tabindex="-1"></a><span class="st">## Equation for stage 1 mediator:</span></span>
+<span id="cb95-9"><a href="in-class-exercises-2.html#cb95-9" tabindex="-1"></a><span class="st"># Equation for stage 1 mediator:</span></span>
 <span id="cb95-10"><a href="in-class-exercises-2.html#cb95-10" tabindex="-1"></a><span class="st">Emp ~ ParAtt + m1_x2 * PeerAtt</span></span>
 <span id="cb95-11"><a href="in-class-exercises-2.html#cb95-11" tabindex="-1"></a></span>
-<span id="cb95-12"><a href="in-class-exercises-2.html#cb95-12" tabindex="-1"></a><span class="st">## Covariances:</span></span>
+<span id="cb95-12"><a href="in-class-exercises-2.html#cb95-12" tabindex="-1"></a><span class="st"># Covariances:</span></span>
 <span id="cb95-13"><a href="in-class-exercises-2.html#cb95-13" tabindex="-1"></a><span class="st">ProSoc ~~ Aggr</span></span>
 <span id="cb95-14"><a href="in-class-exercises-2.html#cb95-14" tabindex="-1"></a><span class="st">ParAtt ~~ PeerAtt</span></span>
 <span id="cb95-15"><a href="in-class-exercises-2.html#cb95-15" tabindex="-1"></a></span>
-<span id="cb95-16"><a href="in-class-exercises-2.html#cb95-16" tabindex="-1"></a><span class="st">## Indirect effects:</span></span>
+<span id="cb95-16"><a href="in-class-exercises-2.html#cb95-16" tabindex="-1"></a><span class="st"># Indirect effects:</span></span>
 <span id="cb95-17"><a href="in-class-exercises-2.html#cb95-17" tabindex="-1"></a><span class="st">ie_pro := m1_x2 * m21_m1 * y_m21</span></span>
 <span id="cb95-18"><a href="in-class-exercises-2.html#cb95-18" tabindex="-1"></a><span class="st">ie_agg := m1_x2 * m22_m1 * y_m22</span></span>
 <span id="cb95-19"><a href="in-class-exercises-2.html#cb95-19" tabindex="-1"></a><span class="st">&#39;</span></span></code></pre></div>
@@ -800,13 +803,13 @@ Only after you are certain that your code is correct do you want to run the full
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="in-class-exercises-2.html#cb98-1" tabindex="-1"></a><span class="do">## Set a seed to get replicable bootstrap samples:</span></span>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="in-class-exercises-2.html#cb98-1" tabindex="-1"></a><span class="co"># Set a seed to get replicable bootstrap samples:</span></span>
 <span id="cb98-2"><a href="in-class-exercises-2.html#cb98-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235711</span>)</span>
 <span id="cb98-3"><a href="in-class-exercises-2.html#cb98-3" tabindex="-1"></a></span>
-<span id="cb98-4"><a href="in-class-exercises-2.html#cb98-4" tabindex="-1"></a><span class="do">## Estimate the model with bootstrapping:</span></span>
+<span id="cb98-4"><a href="in-class-exercises-2.html#cb98-4" tabindex="-1"></a><span class="co"># Estimate the model with bootstrapping:</span></span>
 <span id="cb98-5"><a href="in-class-exercises-2.html#cb98-5" tabindex="-1"></a>out_boot <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod, <span class="at">data =</span> seData, <span class="at">se =</span> <span class="st">&quot;bootstrap&quot;</span>, <span class="at">bootstrap =</span> <span class="dv">1000</span>)</span>
 <span id="cb98-6"><a href="in-class-exercises-2.html#cb98-6" tabindex="-1"></a></span>
-<span id="cb98-7"><a href="in-class-exercises-2.html#cb98-7" tabindex="-1"></a><span class="do">## Summarize the model:</span></span>
+<span id="cb98-7"><a href="in-class-exercises-2.html#cb98-7" tabindex="-1"></a><span class="co"># Summarize the model:</span></span>
 <span id="cb98-8"><a href="in-class-exercises-2.html#cb98-8" tabindex="-1"></a><span class="fu">summary</span>(out_boot)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 16 iterations
 ## 
@@ -1185,19 +1188,19 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="in-class-exercises-2.html#cb111-1" tabindex="-1"></a><span class="fu">library</span>(rockchalk)</span>
 <span id="cb111-2"><a href="in-class-exercises-2.html#cb111-2" tabindex="-1"></a></span>
-<span id="cb111-3"><a href="in-class-exercises-2.html#cb111-3" tabindex="-1"></a><span class="do">## Estimate and plot simple slopes:</span></span>
+<span id="cb111-3"><a href="in-class-exercises-2.html#cb111-3" tabindex="-1"></a><span class="co"># Estimate and plot simple slopes:</span></span>
 <span id="cb111-4"><a href="in-class-exercises-2.html#cb111-4" tabindex="-1"></a>psOut <span class="ot">&lt;-</span> <span class="fu">plotSlopes</span>(olsFit,</span>
 <span id="cb111-5"><a href="in-class-exercises-2.html#cb111-5" tabindex="-1"></a>                    <span class="at">plotx    =</span> <span class="st">&quot;success&quot;</span>, </span>
 <span id="cb111-6"><a href="in-class-exercises-2.html#cb111-6" tabindex="-1"></a>                    <span class="at">modx     =</span> <span class="st">&quot;disillusion&quot;</span>,</span>
 <span id="cb111-7"><a href="in-class-exercises-2.html#cb111-7" tabindex="-1"></a>                    <span class="at">modxVals =</span> <span class="st">&quot;std.dev&quot;</span>)</span></code></pre></div>
 <p><img src="isem_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="in-class-exercises-2.html#cb112-1" tabindex="-1"></a><span class="do">## Test the simple slopes:</span></span>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="in-class-exercises-2.html#cb112-1" tabindex="-1"></a><span class="co"># Test the simple slopes:</span></span>
 <span id="cb112-2"><a href="in-class-exercises-2.html#cb112-2" tabindex="-1"></a>tsOut <span class="ot">&lt;-</span> <span class="fu">testSlopes</span>(psOut)</span></code></pre></div>
 <pre><code>## Values of disillusion OUTSIDE this interval:
 ##          lo          hi 
 ## -28.9332857   0.2672244 
 ## cause the slope of (b1 + b2*disillusion)success to be statistically significant</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="in-class-exercises-2.html#cb114-1" tabindex="-1"></a><span class="do">## View the results:</span></span>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="in-class-exercises-2.html#cb114-1" tabindex="-1"></a><span class="co"># View the results:</span></span>
 <span id="cb114-2"><a href="in-class-exercises-2.html#cb114-2" tabindex="-1"></a>tsOut<span class="sc">$</span>hypotests</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -1320,21 +1323,21 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="in-class-exercises-2.html#cb121-1" tabindex="-1"></a><span class="fu">library</span>(semTools)</span>
 <span id="cb121-2"><a href="in-class-exercises-2.html#cb121-2" tabindex="-1"></a></span>
-<span id="cb121-3"><a href="in-class-exercises-2.html#cb121-3" tabindex="-1"></a><span class="do">## Define the conditional values at which to calculate simple slopes:</span></span>
+<span id="cb121-3"><a href="in-class-exercises-2.html#cb121-3" tabindex="-1"></a><span class="co"># Define the conditional values at which to calculate simple slopes:</span></span>
 <span id="cb121-4"><a href="in-class-exercises-2.html#cb121-4" tabindex="-1"></a>condVals <span class="ot">&lt;-</span> <span class="fu">summarise</span>(outlook,</span>
 <span id="cb121-5"><a href="in-class-exercises-2.html#cb121-5" tabindex="-1"></a>                      <span class="st">&quot;m-sd&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(disillusion) <span class="sc">-</span> <span class="fu">sd</span>(disillusion),</span>
 <span id="cb121-6"><a href="in-class-exercises-2.html#cb121-6" tabindex="-1"></a>                      <span class="at">mean =</span> <span class="fu">mean</span>(disillusion),</span>
 <span id="cb121-7"><a href="in-class-exercises-2.html#cb121-7" tabindex="-1"></a>                      <span class="st">&quot;m+sd&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(disillusion) <span class="sc">+</span> <span class="fu">sd</span>(disillusion)</span>
 <span id="cb121-8"><a href="in-class-exercises-2.html#cb121-8" tabindex="-1"></a>                      ) <span class="sc">|&gt;</span> <span class="fu">unlist</span>()</span>
 <span id="cb121-9"><a href="in-class-exercises-2.html#cb121-9" tabindex="-1"></a></span>
-<span id="cb121-10"><a href="in-class-exercises-2.html#cb121-10" tabindex="-1"></a><span class="do">## Compute simple slopes and intercepts:</span></span>
+<span id="cb121-10"><a href="in-class-exercises-2.html#cb121-10" tabindex="-1"></a><span class="co"># Compute simple slopes and intercepts:</span></span>
 <span id="cb121-11"><a href="in-class-exercises-2.html#cb121-11" tabindex="-1"></a>ssOut <span class="ot">&lt;-</span> <span class="fu">probe2WayMC</span>(pathFit,</span>
 <span id="cb121-12"><a href="in-class-exercises-2.html#cb121-12" tabindex="-1"></a>                     <span class="at">nameX    =</span> <span class="fu">c</span>(<span class="st">&quot;success&quot;</span>, <span class="st">&quot;disillusion&quot;</span>, <span class="st">&quot;success:disillusion&quot;</span>),</span>
 <span id="cb121-13"><a href="in-class-exercises-2.html#cb121-13" tabindex="-1"></a>                     <span class="at">nameY    =</span> <span class="st">&quot;progress&quot;</span>,</span>
 <span id="cb121-14"><a href="in-class-exercises-2.html#cb121-14" tabindex="-1"></a>                     <span class="at">modVar   =</span> <span class="st">&quot;disillusion&quot;</span>,</span>
 <span id="cb121-15"><a href="in-class-exercises-2.html#cb121-15" tabindex="-1"></a>                     <span class="at">valProbe =</span> condVals)</span>
 <span id="cb121-16"><a href="in-class-exercises-2.html#cb121-16" tabindex="-1"></a></span>
-<span id="cb121-17"><a href="in-class-exercises-2.html#cb121-17" tabindex="-1"></a><span class="do">## Check the results:</span></span>
+<span id="cb121-17"><a href="in-class-exercises-2.html#cb121-17" tabindex="-1"></a><span class="co"># Check the results:</span></span>
 <span id="cb121-18"><a href="in-class-exercises-2.html#cb121-18" tabindex="-1"></a>ssOut</span></code></pre></div>
 <pre><code>## $SimpleIntcept
 ##      disillusion   est    se      z pvalue
@@ -1347,7 +1350,7 @@ Click to show code
 ## m-sd       2.719 0.897 0.083 10.792      0
 ## mean       3.497 1.033 0.065 15.994      0
 ## m+sd       4.274 1.169 0.088 13.223      0</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="in-class-exercises-2.html#cb123-1" tabindex="-1"></a><span class="do">## Visualize the simple slopes:</span></span>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="in-class-exercises-2.html#cb123-1" tabindex="-1"></a><span class="co"># Visualize the simple slopes:</span></span>
 <span id="cb123-2"><a href="in-class-exercises-2.html#cb123-2" tabindex="-1"></a><span class="fu">plotProbe</span>(ssOut,</span>
 <span id="cb123-3"><a href="in-class-exercises-2.html#cb123-3" tabindex="-1"></a>          <span class="at">xlim =</span> <span class="fu">range</span>(outlook<span class="sc">$</span>success),</span>
 <span id="cb123-4"><a href="in-class-exercises-2.html#cb123-4" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;Ease of Personal Success&quot;</span>,</span>

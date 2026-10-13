@@ -21,6 +21,14 @@ Otherwise, you will fail the assignment.
 
 ### Assignment 2 {-}
 
+Assignment 2 will be fully graded on the usual 10-point scale. Your A2 grade will be a weighted combination of several
+components.
+
+- Research poster (evaluated as a standalone document)
+- Poster presentation
+- Participation during the poster session
+- Supplementary material packet
+
 ***Details coming soon!***
 
 <!--

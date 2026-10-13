@@ -53,6 +53,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -175,24 +177,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i>Assignments</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html"><i class="fa fa-check"></i>Assignment Guidelines</a>
 <ul>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
-<li class="chapter" data-level="" data-path="assignment-guidelines.html"><a href="assignment-guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a1"><i class="fa fa-check"></i>Assignment 1: Path Analysis</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#a2"><i class="fa fa-check"></i>Assignment 2: Structural Equation Modeling</a></li>
+<li class="chapter" data-level="" data-path="guidelines.html"><a href="guidelines.html#data_options"><i class="fa fa-check"></i>Data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i>Elaboration &amp; Tips</a>
 <ul>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
-<li class="chapter" data-level="" data-path="elaboration-tips.html"><a href="elaboration-tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#progression"><i class="fa fa-check"></i>Progression</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#rq"><i class="fa fa-check"></i>Theoretical Model &amp; Research Question</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#model_assumptions"><i class="fa fa-check"></i>Assumptions</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html#reporting_standards"><i class="fa fa-check"></i>Reporting Standards</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html"><i class="fa fa-check"></i>Procedures</a>
 <ul>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#formatting"><i class="fa fa-check"></i>Formatting</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#length"><i class="fa fa-check"></i>Length</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#submission-2"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -511,8 +514,8 @@ Click to show code
 <span id="cb17-4"><a href="in-class-exercises-1.html#cb17-4" tabindex="-1"></a><span class="co"># Load the `haven` package for reading in SPSS files:</span></span>
 <span id="cb17-5"><a href="in-class-exercises-1.html#cb17-5" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb17-6"><a href="in-class-exercises-1.html#cb17-6" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="in-class-exercises-1.html#cb17-7" tabindex="-1"></a><span class="do">## Load the &#39;Sesam.sav&#39; data</span></span>
-<span id="cb17-8"><a href="in-class-exercises-1.html#cb17-8" tabindex="-1"></a><span class="do">## Use haven::zap_formats() to remove SPSS attributes</span></span>
+<span id="cb17-7"><a href="in-class-exercises-1.html#cb17-7" tabindex="-1"></a><span class="co"># Load the &#39;Sesam.sav&#39; data</span></span>
+<span id="cb17-8"><a href="in-class-exercises-1.html#cb17-8" tabindex="-1"></a><span class="co"># Use haven::zap_formats() to remove SPSS attributes</span></span>
 <span id="cb17-9"><a href="in-class-exercises-1.html#cb17-9" tabindex="-1"></a>sesam <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="at">file =</span> <span class="st">&quot;Sesam.sav&quot;</span>) <span class="sc">|&gt;</span> <span class="fu">zap_formats</span>()</span></code></pre></div>
 <hr />
 <p>This file is part of a larger dataset that evaluates the impact of the first year of the Sesame Street television
@@ -536,7 +539,7 @@ series. Sesame Street is mainly concerned with teaching preschool related skills
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="in-class-exercises-1.html#cb18-1" tabindex="-1"></a><span class="do">## Examine the data structure:</span></span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="in-class-exercises-1.html#cb18-1" tabindex="-1"></a><span class="co"># Examine the data structure:</span></span>
 <span id="cb18-2"><a href="in-class-exercises-1.html#cb18-2" tabindex="-1"></a><span class="fu">str</span>(sesam)</span></code></pre></div>
 <pre><code>## tibble [240 × 8] (S3: tbl_df/tbl/data.frame)
 ##  $ id      : num [1:240] 1 2 3 4 5 6 7 8 9 10 ...
@@ -629,10 +632,10 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="in-class-exercises-1.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb23-2"><a href="in-class-exercises-1.html#cb23-2" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="in-class-exercises-1.html#cb23-3" tabindex="-1"></a><span class="do">## Create an empty baseline plot object:</span></span>
+<span id="cb23-3"><a href="in-class-exercises-1.html#cb23-3" tabindex="-1"></a><span class="co"># Create an empty baseline plot object:</span></span>
 <span id="cb23-4"><a href="in-class-exercises-1.html#cb23-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sesam, <span class="fu">aes</span>(<span class="at">x =</span> ndif))</span>
 <span id="cb23-5"><a href="in-class-exercises-1.html#cb23-5" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="in-class-exercises-1.html#cb23-6" tabindex="-1"></a><span class="do">## Add some appropriate geoms:</span></span>
+<span id="cb23-6"><a href="in-class-exercises-1.html#cb23-6" tabindex="-1"></a><span class="co"># Add some appropriate geoms:</span></span>
 <span id="cb23-7"><a href="in-class-exercises-1.html#cb23-7" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <p><img src="isem_files/figure-html/unnamed-chunk-85-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="in-class-exercises-1.html#cb24-1" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code></pre></div>
@@ -665,7 +668,7 @@ useful.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="in-class-exercises-1.html#cb26-1" tabindex="-1"></a><span class="do">## Create a scatterplot of the pre- and post-test number knowledge</span></span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="in-class-exercises-1.html#cb26-1" tabindex="-1"></a><span class="co"># Create a scatterplot of the pre- and post-test number knowledge</span></span>
 <span id="cb26-2"><a href="in-class-exercises-1.html#cb26-2" tabindex="-1"></a><span class="fu">ggplot</span>(sesam, <span class="fu">aes</span>(<span class="at">x =</span> prenumb, <span class="at">y =</span> postnumb)) <span class="sc">+</span></span>
 <span id="cb26-3"><a href="in-class-exercises-1.html#cb26-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="isem_files/figure-html/unnamed-chunk-86-1.png" alt="" width="672" /></p>
@@ -711,7 +714,7 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="in-class-exercises-1.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb27-2"><a href="in-class-exercises-1.html#cb27-2" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="in-class-exercises-1.html#cb27-3" tabindex="-1"></a><span class="do">## Test the correlations using psych::corr.test():</span></span>
+<span id="cb27-3"><a href="in-class-exercises-1.html#cb27-3" tabindex="-1"></a><span class="co"># Test the correlations using psych::corr.test():</span></span>
 <span id="cb27-4"><a href="in-class-exercises-1.html#cb27-4" tabindex="-1"></a>sesam <span class="sc">|&gt;</span></span>
 <span id="cb27-5"><a href="in-class-exercises-1.html#cb27-5" tabindex="-1"></a>  <span class="fu">select</span>(postnumb, age, prelet, prenumb, prerelat, peabody) <span class="sc">|&gt;</span></span>
 <span id="cb27-6"><a href="in-class-exercises-1.html#cb27-6" tabindex="-1"></a>  <span class="fu">corr.test</span>()</span></code></pre></div>
@@ -741,7 +744,7 @@ Click to show code
 <span id="cb29-2"><a href="in-class-exercises-1.html#cb29-2" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="in-class-exercises-1.html#cb29-3" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb29-4"><a href="in-class-exercises-1.html#cb29-4" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="in-class-exercises-1.html#cb29-5" tabindex="-1"></a><span class="do">## Test the correlations using multiple cor.test() calls:</span></span>
+<span id="cb29-5"><a href="in-class-exercises-1.html#cb29-5" tabindex="-1"></a><span class="co"># Test the correlations using multiple cor.test() calls:</span></span>
 <span id="cb29-6"><a href="in-class-exercises-1.html#cb29-6" tabindex="-1"></a>sesam <span class="sc">%$%</span> <span class="fu">cor.test</span>(postnumb, age)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
@@ -967,8 +970,7 @@ assumption in path analysis.</p>
 </ul>
 <p><em>Hint:</em> You can make the predictors random in, at least, two ways:</p>
 <ol style="list-style-type: decimal">
-<li>Modify the model syntax to specify the correlation between <code>age</code> and
-<code>prenumb</code>.</li>
+<li>Modify the model syntax to specify the correlation between <code>age</code> and <code>prenumb</code>.</li>
 <li>Add <code>fixed.x = FALSE</code> to your <code>sem()</code> call.</li>
 </ol>
 <details>
@@ -1159,8 +1161,7 @@ milliseconds) during a driving simulation.</p>
 <ul>
 <li>What concept are we representing with this plot?</li>
 </ul>
-<p><em>Hint:</em> Consider the lap times example from
-<a href="lecture-1.html#statistical-modeling">the statistical modeling section</a> of Lecture 2.</p>
+<p><em>Hint:</em> Consider the lap times example from <a href="lecture-1.html#statistical-modeling">the statistical modeling section</a> of Lecture 2.</p>
 <details>
 <summary>
 Click to show code
@@ -1296,10 +1297,10 @@ codes.</p>
 <summary>
 Click to show code
 </summary>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="in-class-exercises-1.html#cb58-1" tabindex="-1"></a><span class="do">## Specify the model syntax:</span></span>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="in-class-exercises-1.html#cb58-1" tabindex="-1"></a><span class="co"># Specify the model syntax:</span></span>
 <span id="cb58-2"><a href="in-class-exercises-1.html#cb58-2" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&#39;RT ~ 1 + HH + HF&#39;</span></span>
 <span id="cb58-3"><a href="in-class-exercises-1.html#cb58-3" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="in-class-exercises-1.html#cb58-4" tabindex="-1"></a><span class="do">## Dummy code the factor variable:</span></span>
+<span id="cb58-4"><a href="in-class-exercises-1.html#cb58-4" tabindex="-1"></a><span class="co"># Dummy code the factor variable:</span></span>
 <span id="cb58-5"><a href="in-class-exercises-1.html#cb58-5" tabindex="-1"></a>drivers2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(drivers,</span>
 <span id="cb58-6"><a href="in-class-exercises-1.html#cb58-6" tabindex="-1"></a>                   <span class="do">## Create dummy code for &quot;hand-held&quot; condition:</span></span>
 <span id="cb58-7"><a href="in-class-exercises-1.html#cb58-7" tabindex="-1"></a>                   <span class="at">HH =</span> <span class="fu">ifelse</span>(condition <span class="sc">==</span> <span class="st">&quot;hand-held&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
@@ -1307,10 +1308,10 @@ Click to show code
 <span id="cb58-9"><a href="in-class-exercises-1.html#cb58-9" tabindex="-1"></a>                   <span class="at">HF =</span> <span class="fu">ifelse</span>(condition <span class="sc">==</span> <span class="st">&quot;hands-free&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb58-10"><a href="in-class-exercises-1.html#cb58-10" tabindex="-1"></a>                   )</span>
 <span id="cb58-11"><a href="in-class-exercises-1.html#cb58-11" tabindex="-1"></a></span>
-<span id="cb58-12"><a href="in-class-exercises-1.html#cb58-12" tabindex="-1"></a><span class="do">## Estimate the path model:</span></span>
+<span id="cb58-12"><a href="in-class-exercises-1.html#cb58-12" tabindex="-1"></a><span class="co"># Estimate the path model:</span></span>
 <span id="cb58-13"><a href="in-class-exercises-1.html#cb58-13" tabindex="-1"></a>lavOut <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod, <span class="at">data =</span> drivers2)</span>
 <span id="cb58-14"><a href="in-class-exercises-1.html#cb58-14" tabindex="-1"></a></span>
-<span id="cb58-15"><a href="in-class-exercises-1.html#cb58-15" tabindex="-1"></a><span class="do">## Summarize the results:</span></span>
+<span id="cb58-15"><a href="in-class-exercises-1.html#cb58-15" tabindex="-1"></a><span class="co"># Summarize the results:</span></span>
 <span id="cb58-16"><a href="in-class-exercises-1.html#cb58-16" tabindex="-1"></a><span class="fu">summary</span>(lavOut)</span></code></pre></div>
 <pre><code>## lavaan 0.7-2 ended normally after 1 iteration
 ## 
@@ -1356,7 +1357,7 @@ Click to show code
 <span id="cb60-4"><a href="in-class-exercises-1.html#cb60-4" tabindex="-1"></a>         ) <span class="sc">|&gt;</span></span>
 <span id="cb60-5"><a href="in-class-exercises-1.html#cb60-5" tabindex="-1"></a>  <span class="fu">sem</span>(mod, <span class="at">data =</span> _) <span class="co"># Estimate the model</span></span>
 <span id="cb60-6"><a href="in-class-exercises-1.html#cb60-6" tabindex="-1"></a></span>
-<span id="cb60-7"><a href="in-class-exercises-1.html#cb60-7" tabindex="-1"></a><span class="do">## Do the two approaches produce the same results?</span></span>
+<span id="cb60-7"><a href="in-class-exercises-1.html#cb60-7" tabindex="-1"></a><span class="co"># Do the two approaches produce the same results?</span></span>
 <span id="cb60-8"><a href="in-class-exercises-1.html#cb60-8" tabindex="-1"></a><span class="fu">all.equal</span>(</span>
 <span id="cb60-9"><a href="in-class-exercises-1.html#cb60-9" tabindex="-1"></a>  <span class="fu">parameterEstimates</span>(lavOut), </span>
 <span id="cb60-10"><a href="in-class-exercises-1.html#cb60-10" tabindex="-1"></a>  <span class="fu">parameterEstimates</span>(lavOut2)</span>
