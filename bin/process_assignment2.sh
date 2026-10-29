@@ -13,8 +13,8 @@
 ### Usage:
 # ./process_assignments.sh BS_DOWNLOAD_FILE.zip
 
-function lss () {
-  ls -dr */ | grep -v downloads | grep -v duplicates
+function lss() {
+	ls -dr */ | grep -v downloads | grep -v duplicates
 }
 
 ## Unzip the archive downloaded from BrightSpace
@@ -25,13 +25,13 @@ mv "$1" downloads/
 
 rename.ul --all " " "_" ./*
 
-for x in `lss`; do
-  d=`echo $x | sed s/^.*[0-9]_-_// | sed s/_-_.*//`
+for x in $(lss); do
+	d=$(echo $x | sed s/^.*[0-9]_-_// | sed s/_-_.*//)
 
-  if [ -e $d ]; then
-    mv $x duplicates/
-    rename.ul --all "_" " " duplicates/$x
-  else
-    mv $x $d
-  fi
+	if [ -e $d ]; then
+		mv $x duplicates/
+		rename.ul --all "_" " " duplicates/$x
+	else
+		mv $x $d
+	fi
 done
