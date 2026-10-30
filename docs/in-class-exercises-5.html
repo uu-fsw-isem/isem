@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -524,7 +524,7 @@ Click to show code
 <span id="cb237-9"><a href="in-class-exercises-5.html#cb237-9" tabindex="-1"></a>cfa_out <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod_cfa, <span class="at">data =</span> condom)</span>
 <span id="cb237-10"><a href="in-class-exercises-5.html#cb237-10" tabindex="-1"></a></span>
 <span id="cb237-11"><a href="in-class-exercises-5.html#cb237-11" tabindex="-1"></a><span class="fu">summary</span>(cfa_out, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 29 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 29 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -537,6 +537,11 @@ Click to show code
 ##   Test statistic                                35.611
 ##   Degrees of freedom                                24
 ##   P-value (Chi-square)                           0.060
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                37.333
+##   Degrees of freedom                                24
+##   P-value (Chi-square)                           0.041
 ## 
 ## Model Test Baseline Model:
 ## 
@@ -721,7 +726,7 @@ Click to show code
 <span id="cb239-11"><a href="in-class-exercises-5.html#cb239-11" tabindex="-1"></a>out_tora1 <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_tora1, <span class="at">data =</span> condom)</span>
 <span id="cb239-12"><a href="in-class-exercises-5.html#cb239-12" tabindex="-1"></a></span>
 <span id="cb239-13"><a href="in-class-exercises-5.html#cb239-13" tabindex="-1"></a><span class="fu">summary</span>(out_tora1, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 24 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 24 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -734,6 +739,11 @@ Click to show code
 ##   Test statistic                                27.890
 ##   Degrees of freedom                                18
 ##   P-value (Chi-square)                           0.064
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                27.320
+##   Degrees of freedom                                18
+##   P-value (Chi-square)                           0.073
 ## 
 ## Model Test Baseline Model:
 ## 
@@ -921,7 +931,7 @@ Click to show code
 <span id="cb241-10"><a href="in-class-exercises-5.html#cb241-10" tabindex="-1"></a>out_tora2 <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod_tora2, <span class="at">data =</span> condom)</span>
 <span id="cb241-11"><a href="in-class-exercises-5.html#cb241-11" tabindex="-1"></a></span>
 <span id="cb241-12"><a href="in-class-exercises-5.html#cb241-12" tabindex="-1"></a><span class="fu">summary</span>(out_tora2, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 31 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 31 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -934,6 +944,11 @@ Click to show code
 ##   Test statistic                                48.757
 ##   Degrees of freedom                                39
 ##   P-value (Chi-square)                           0.136
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                51.946
+##   Degrees of freedom                                39
+##   P-value (Chi-square)                           0.080
 ## 
 ## Model Test Baseline Model:
 ## 
@@ -1353,7 +1368,7 @@ constraints and check which one best represents the data.</p>
 <span id="cb249-13"><a href="in-class-exercises-5.html#cb249-13" tabindex="-1"></a></span>
 <span id="cb249-14"><a href="in-class-exercises-5.html#cb249-14" tabindex="-1"></a><span class="co"># Check the results:</span></span>
 <span id="cb249-15"><a href="in-class-exercises-5.html#cb249-15" tabindex="-1"></a><span class="fu">summary</span>(out2)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 33 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 33 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1366,6 +1381,11 @@ constraints and check which one best represents the data.</p>
 ##   Test statistic                                62.797
 ##   Degrees of freedom                                39
 ##   P-value (Chi-square)                           0.009
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                64.458
+##   Degrees of freedom                                39
+##   P-value (Chi-square)                           0.006
 ## 
 ## Parameter Estimates:
 ## 
@@ -1576,7 +1596,7 @@ summary(config, fit.measures = TRUE)
 ```
 
 ```
-## lavaan 0.7-2 ended normally after 54 iterations
+## lavaan 0.7-3 ended normally after 54 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1594,6 +1614,14 @@ summary(config, fit.measures = TRUE)
 ##   Test statistic for each group:
 ##     woman                                       42.623
 ##     man                                         23.941
+##                                                       
+##   Browne's residual (NT model-based) test             
+##   Test statistic                                67.352
+##   Degrees of freedom                                48
+##   P-value (Chi-square)                           0.034
+##   Test statistic for each group:
+##     woman                                       44.315
+##     man                                         23.037
 ## 
 ## Model Test Baseline Model:
 ## 
@@ -1751,7 +1779,7 @@ summary(weak)
 ```
 
 ```
-## lavaan 0.7-2 ended normally after 37 iterations
+## lavaan 0.7-3 ended normally after 37 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1770,6 +1798,14 @@ summary(weak)
 ##   Test statistic for each group:
 ##     woman                                       43.148
 ##     man                                         25.409
+##                                                       
+##   Browne's residual (NT model-based) test             
+##   Test statistic                                69.432
+##   Degrees of freedom                                54
+##   P-value (Chi-square)                           0.077
+##   Test statistic for each group:
+##     woman                                       44.714
+##     man                                         24.718
 ## 
 ## Parameter Estimates:
 ## 
@@ -1889,7 +1925,7 @@ summary(strong)
 ```
 
 ```
-## lavaan 0.7-2 ended normally after 60 iterations
+## lavaan 0.7-3 ended normally after 60 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1908,6 +1944,14 @@ summary(strong)
 ##   Test statistic for each group:
 ##     woman                                       43.961
 ##     man                                         28.089
+##                                                       
+##   Browne's residual (NT model-based) test             
+##   Test statistic                                72.801
+##   Degrees of freedom                                60
+##   P-value (Chi-square)                           0.124
+##   Test statistic for each group:
+##     woman                                       46.884
+##     man                                         25.917
 ## 
 ## Parameter Estimates:
 ## 

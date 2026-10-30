@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -578,7 +578,7 @@ Click to show code
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="in-class-exercises-2.html#cb93-1" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
 <span id="cb93-2"><a href="in-class-exercises-2.html#cb93-2" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod0, <span class="at">data =</span> seData)</span>
 <span id="cb93-3"><a href="in-class-exercises-2.html#cb93-3" tabindex="-1"></a><span class="fu">summary</span>(out)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 16 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 16 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -588,6 +588,10 @@ Click to show code
 ## 
 ## Model Test User Model:
 ##                                                       
+##   Test statistic                                 0.000
+##   Degrees of freedom                                 0
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
 ##   Test statistic                                 0.000
 ##   Degrees of freedom                                 0
 ## 
@@ -705,7 +709,7 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="in-class-exercises-2.html#cb96-1" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">sem</span>(mod, <span class="at">data =</span> seData)</span>
 <span id="cb96-2"><a href="in-class-exercises-2.html#cb96-2" tabindex="-1"></a><span class="fu">summary</span>(out)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 16 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 16 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -715,6 +719,10 @@ Click to show code
 ## 
 ## Model Test User Model:
 ##                                                       
+##   Test statistic                                 0.000
+##   Degrees of freedom                                 0
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
 ##   Test statistic                                 0.000
 ##   Degrees of freedom                                 0
 ## 
@@ -1256,7 +1264,7 @@ Click to show code
 Click to show code
 </summary>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="in-class-exercises-2.html#cb117-1" tabindex="-1"></a><span class="fu">summary</span>(pathFit)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 1 iteration
+<pre><code>## lavaan 0.7-3 ended normally after 1 iteration
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1266,6 +1274,10 @@ Click to show code
 ## 
 ## Model Test User Model:
 ##                                                       
+##   Test statistic                                 0.000
+##   Degrees of freedom                                 0
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
 ##   Test statistic                                 0.000
 ##   Degrees of freedom                                 0
 ## 

@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -611,7 +611,7 @@ Click to show code
 <span id="cb127-6"><a href="at-home-exercises-3.html#cb127-6" tabindex="-1"></a></span>
 <span id="cb127-7"><a href="at-home-exercises-3.html#cb127-7" tabindex="-1"></a><span class="co"># Summarize the fitted model:</span></span>
 <span id="cb127-8"><a href="at-home-exercises-3.html#cb127-8" tabindex="-1"></a><span class="fu">summary</span>(outH1<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 23 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 23 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -622,6 +622,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                               336.181
+##   Degrees of freedom                                35
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                               403.714
 ##   Degrees of freedom                                35
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -685,7 +690,7 @@ Click to show answer
 </summary>
 <p>Yes, the values should agree. This first part of the lavaan model summary reports the number of model parameters and the
 degrees of freedom.</p>
-<pre><code>## lavaan 0.7-2 ended normally after 23 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 23 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -696,6 +701,11 @@ degrees of freedom.</p>
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                               336.181
+##   Degrees of freedom                                35
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                               403.714
 ##   Degrees of freedom                                35
 ##   P-value (Chi-square)                           0.000</code></pre>
 <p>In this case, we see that we’ve estimated 20 parameters and we have df = 35.</p>
@@ -772,7 +782,7 @@ Click to show code
 <span id="cb132-3"><a href="at-home-exercises-3.html#cb132-3" tabindex="-1"></a></span>
 <span id="cb132-4"><a href="at-home-exercises-3.html#cb132-4" tabindex="-1"></a><span class="co"># Summarize the results:</span></span>
 <span id="cb132-5"><a href="at-home-exercises-3.html#cb132-5" tabindex="-1"></a><span class="fu">summary</span>(outH2<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 26 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 26 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -783,6 +793,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              1158.738
+##   Degrees of freedom                               169
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              1371.417
 ##   Degrees of freedom                               169
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -916,7 +931,7 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="at-home-exercises-3.html#cb135-1" tabindex="-1"></a>outH2<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod2, <span class="at">data =</span> cattell, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">std.lv =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb135-2"><a href="at-home-exercises-3.html#cb135-2" tabindex="-1"></a><span class="fu">summary</span>(outH2<span class="fl">.2</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 18 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 18 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -927,6 +942,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              1158.738
+##   Degrees of freedom                               169
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              1371.418
 ##   Degrees of freedom                               169
 ##   P-value (Chi-square)                           0.000
 ## 

@@ -116,25 +116,25 @@ The obligatory aspects of the second assignment are described below.
 
 #### Evaluation {-}
 
-***Details coming soon!***
-
-<!--
 See the [Grading](#assignment_grading) section below for more information on how Assignment 2 will be evaluated.
 
-You can access an evaluation matrix for Assignment 2 [here](`r makeCourseUrl("assets/assignments/a2_guidelines.pdf")`).
-
-- This matrix gives an indication of what level of work constitutes *insufficient*, *sufficient*, and *excellent*
-responses to the seven components described above.
--->
+- You can access the rubric for the Assignment 2 poster presentations [here](assets/assignments/a2_poster_rubric.pdf).
+  - The instructors will use this rubric to score your poster presentations.
+  - You will use this rubric to evaluate your classmates' poster presentations.
 
 #### Submission {-}
 
-Your Assignment 2 "submission" will comprise two parts.
+Your Assignment 2 "submission" will comprise three parts.
 
-1. A conference-style poster
-   - Presented in-person on **Thursday 5 November**.
-1. A packet of supplementary material
-   - Submitted via Brightspace on **Sunday 8 November**.
+1. You will submit your finalized poster as a PDF document.
+   - Upload your poster to Brightspace.
+   - Poster upload deadline: **Wednesday 4 November at 23:59**
+1. You will present your poster and evaluate your peers' presentations at the in-person poster session.
+   - Poster session: **Thursday 5 November, 09:00 - 10:45**
+   - The poster session will be held in the room we'd typically use for the computer practical.
+1. You will upload a packet of supplementary materials.
+   - Upload these materials to Brightspace.
+   - Upload deadline for supplementary materials: **Sunday 8 November at 23:59**
 
 See the [Procedures](#procedures) section for further details.
 

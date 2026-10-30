@@ -93,11 +93,40 @@ The following resources provide some help guidance.
 - [Academic Skills Human Geography and Spatial Planning: Poster Presentation](https://handboeksgpl.sites.uu.nl/other-forms-of-knowledge-exchange/poster-presentation/?lang=en)
 - [How to Create a Research Poster](https://guides.nyu.edu/posters)
 
+#### Poster Session {-}
+
+You will present your poster in a conference-style poster session. You will alternate between presenting your group's
+poster and visiting other groups' posters. This session also serves as an oral defense, so everyone should be prepared
+to explain and discuss their analyses and findings.
+
+In addition to presenting your own group's work, each student will also complete three individual components:
+
+1. Peer feedback: Evaluate the posters of two other groups.
+1. Group evaluation: Provide feedback on your own group's work and collaboration.
+1. Self-reflection: Reflect on your individual contribution and learning.
+
 #### Supplementary Materials {-}
 
-In addition to the poster presentation, you will submit a packet of supporting, supplementary material.
+After the poster presentation, you will submit a packet of supporting, supplementary material.
 
-***Details coming soon!***
+1. A clean R script (or set of scripts) that reproduces your analysis.
+   - This script should conform to the same standards as the R script that you submitted for Assignment 1.
+   - See the [Syntax File](#analysis_script) section for more details.
+1. A write-up of your methods and results, *not* a full research report.
+   - *Do not* include any introduction or theoretical background.
+   - *Do not* include a discussion or conclusion section wherein you synthesize your findings.
+   - *Do* fully explain your methodology.
+     - Research question
+     - Theoretical model
+     - Design decisions
+   - *Do* present and interpret your results
+     - Data description
+     - Assumption checks
+     - CFA results
+     - SEM results
+1. A [GenAI disclosure statement](#ai_statement).
+   - This statement should conform to the same standards as the AI disclosure statement from Assignment 1.
+   - You may include this statement as part of your methods and results write-up or as a stand-alone document.
 
 #### Submission {-}
 
@@ -105,7 +134,8 @@ You will present your poster during the in-person poster session. **Attendance i
 be highly interactive. In addition to presenting your own work, you will also evaluate your classmates presentations.
 
 - You must participate in this poster session to receive credit for A2.
-- The above requirement holds for everyone, regardless of how much you contributed to the analysis and/or creating the poster.
+- The above requirement holds for everyone, regardless of how much you contributed to the analysis and/or creating the
+poster.
 - If you do not attend the poster session, you will not receive a grade for A2, and you will need to resit A2.
   - If any of your groupmates miss the poster session, their absence won't affect your grade.
 
@@ -142,7 +172,7 @@ Clean the script before submitting.
 
 ---
 
-### GenAI disclosure statement {-}
+### GenAI disclosure statement {- #ai_statement}
 
 Naturally, all of the [course policies on GenAI](#ai_policy) also apply to the data analysis assignments. In addition to
 these general policies, you must include a GenAI disclosure statement in each of your assignments.
