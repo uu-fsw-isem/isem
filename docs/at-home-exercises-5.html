@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -592,7 +592,7 @@ Click to show code
 <span id="cb219-5"><a href="at-home-exercises-5.html#cb219-5" tabindex="-1"></a></span>
 <span id="cb219-6"><a href="at-home-exercises-5.html#cb219-6" tabindex="-1"></a><span class="co"># Summarize the results:</span></span>
 <span id="cb219-7"><a href="at-home-exercises-5.html#cb219-7" tabindex="-1"></a><span class="fu">summary</span>(out_sem, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 55 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 55 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -603,6 +603,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              1496.911
+##   Degrees of freedom                               112
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              1570.301
 ##   Degrees of freedom                               112
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -880,7 +885,7 @@ Click to show code
 <span id="cb225-11"><a href="at-home-exercises-5.html#cb225-11" tabindex="-1"></a></span>
 <span id="cb225-12"><a href="at-home-exercises-5.html#cb225-12" tabindex="-1"></a><span class="co"># Summarize the results:</span></span>
 <span id="cb225-13"><a href="at-home-exercises-5.html#cb225-13" tabindex="-1"></a><span class="fu">summary</span>(out_pa, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 43 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 43 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -890,6 +895,10 @@ Click to show code
 ## 
 ## Model Test User Model:
 ##                                                       
+##   Test statistic                                 0.000
+##   Degrees of freedom                                 0
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
 ##   Test statistic                                 0.000
 ##   Degrees of freedom                                 0
 ## 

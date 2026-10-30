@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -541,7 +541,7 @@ Click to show code
 <span id="cb140-6"><a href="in-class-exercises-3.html#cb140-6" tabindex="-1"></a></span>
 <span id="cb140-7"><a href="in-class-exercises-3.html#cb140-7" tabindex="-1"></a><span class="co"># Summarize the fitted model:</span></span>
 <span id="cb140-8"><a href="in-class-exercises-3.html#cb140-8" tabindex="-1"></a><span class="fu">summary</span>(outC1<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 42 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 42 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -552,6 +552,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4238.359
+##   Degrees of freedom                               696
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5035.429
 ##   Degrees of freedom                               696
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -677,7 +682,7 @@ Click to show answer
 </summary>
 <p>Yes, the values should agree. This first part of the lavaan model summary reports the number of model parameters and the
 degrees of freedom.</p>
-<pre><code>## lavaan 0.7-2 ended normally after 42 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 42 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -688,6 +693,11 @@ degrees of freedom.</p>
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4238.359
+##   Degrees of freedom                               696
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5035.429
 ##   Degrees of freedom                               696
 ##   P-value (Chi-square)                           0.000</code></pre>
 <p>In this case, we see that we’ve estimated 84 parameters and we have df = 696.</p>
@@ -777,7 +787,7 @@ Only <em>Liveliness</em> and <em>Tension</em> are not significantly associated
 </ul>
 <p>For example, the following code prints the summary including 95% confidence intervals for the parameter estimates.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="in-class-exercises-3.html#cb143-1" tabindex="-1"></a><span class="fu">summary</span>(outC1<span class="fl">.1</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 42 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 42 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -788,6 +798,11 @@ Only <em>Liveliness</em> and <em>Tension</em> are not significantly associated
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4238.359
+##   Degrees of freedom                               696
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5035.429
 ##   Degrees of freedom                               696
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -911,7 +926,7 @@ the <span class="math inline">\(R^2\)</span> values in the summary.</p>
 Click to show code
 </summary>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="in-class-exercises-3.html#cb145-1" tabindex="-1"></a><span class="fu">summary</span>(outC1<span class="fl">.1</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 42 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 42 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -922,6 +937,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4238.359
+##   Degrees of freedom                               696
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5035.429
 ##   Degrees of freedom                               696
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -1204,7 +1224,7 @@ Click to show code
 <span id="cb158-13"><a href="in-class-exercises-3.html#cb158-13" tabindex="-1"></a><span class="co"># Estimate the new model</span></span>
 <span id="cb158-14"><a href="in-class-exercises-3.html#cb158-14" tabindex="-1"></a>outC1<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod1<span class="fl">.2</span>, <span class="at">data =</span> cattell)</span>
 <span id="cb158-15"><a href="in-class-exercises-3.html#cb158-15" tabindex="-1"></a><span class="fu">summary</span>(outC1<span class="fl">.2</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 36 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 36 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1215,6 +1235,11 @@ Click to show code
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4930.129
+##   Degrees of freedom                               702
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5725.745
 ##   Degrees of freedom                               702
 ##   P-value (Chi-square)                           0.000
 ## 
@@ -1333,7 +1358,7 @@ Click to show code
 covariances by setting the option <code>orthogonal.x = TRUE</code>.</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="in-class-exercises-3.html#cb160-1" tabindex="-1"></a>outC1<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">cfa</span>(mod1, <span class="at">data =</span> cattell, <span class="at">orthogonal.x =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb160-2"><a href="in-class-exercises-3.html#cb160-2" tabindex="-1"></a><span class="fu">summary</span>(outC1<span class="fl">.2</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 36 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 36 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1344,6 +1369,11 @@ covariances by setting the option <code>orthogonal.x = TRUE</code>.</p>
 ## Model Test User Model:
 ##                                                       
 ##   Test statistic                              4930.129
+##   Degrees of freedom                               702
+##   P-value (Chi-square)                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                              5725.745
 ##   Degrees of freedom                               702
 ##   P-value (Chi-square)                           0.000
 ## 

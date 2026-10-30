@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a1_procedures"><i class="fa fa-check"></i>Assignment 1</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#a2_procedures"><i class="fa fa-check"></i>Assignment 2</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#analysis_script"><i class="fa fa-check"></i>Syntax File</a></li>
-<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#genai-disclosure-statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
+<li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#ai_statement"><i class="fa fa-check"></i>GenAI disclosure statement</a></li>
 <li class="chapter" data-level="" data-path="procedures.html"><a href="procedures.html#rules"><i class="fa fa-check"></i>Rules</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="assignment_grading.html"><a href="assignment_grading.html"><i class="fa fa-check"></i>Grading</a>
@@ -577,7 +577,7 @@ Click to show code
 <span id="cb261-3"><a href="at-home-exercises-6.html#cb261-3" tabindex="-1"></a><span class="co"># Estimate the unrestricted model a view the results:</span></span>
 <span id="cb261-4"><a href="at-home-exercises-6.html#cb261-4" tabindex="-1"></a>out_full <span class="ot">&lt;-</span> <span class="fu">sem</span>(<span class="st">&#39;POSTNUMB ~ 1 + AGE&#39;</span>, <span class="at">data =</span> sesam2, <span class="at">group =</span> <span class="st">&quot;VIEWCAT&quot;</span>)</span>
 <span id="cb261-5"><a href="at-home-exercises-6.html#cb261-5" tabindex="-1"></a><span class="fu">summary</span>(out_full)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 1 iteration
+<pre><code>## lavaan 0.7-3 ended normally after 1 iteration
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -591,6 +591,15 @@ Click to show code
 ## 
 ## Model Test User Model:
 ##                                                       
+##   Test statistic                                 0.000
+##   Degrees of freedom                                 0
+##   Test statistic for each group:
+##     Rarely/never                                 0.000
+##     4-5 times per week                           0.000
+##     &gt; 5 times per week                           0.000
+##     2-3 times per week                           0.000
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
 ##   Test statistic                                 0.000
 ##   Degrees of freedom                                 0
 ##   Test statistic for each group:
@@ -693,7 +702,7 @@ Click to show code
 <span id="cb263-3"><a href="at-home-exercises-6.html#cb263-3" tabindex="-1"></a>               <span class="at">data =</span> sesam2,</span>
 <span id="cb263-4"><a href="at-home-exercises-6.html#cb263-4" tabindex="-1"></a>               <span class="at">group =</span> <span class="st">&quot;VIEWCAT&quot;</span>)</span>
 <span id="cb263-5"><a href="at-home-exercises-6.html#cb263-5" tabindex="-1"></a><span class="fu">summary</span>(out_res)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 38 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 38 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -716,6 +725,16 @@ Click to show code
 ##     4-5 times per week                           0.027
 ##     &gt; 5 times per week                           0.760
 ##     2-3 times per week                           0.287
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                 1.476
+##   Degrees of freedom                                 3
+##   P-value (Chi-square)                           0.688
+##   Test statistic for each group:
+##     Rarely/never                                 0.206
+##     4-5 times per week                           0.470
+##     &gt; 5 times per week                           0.437
+##     2-3 times per week                           0.363
 ## 
 ## Parameter Estimates:
 ## 
@@ -950,7 +969,7 @@ Click to show code
 </summary>
 <div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="at-home-exercises-6.html#cb274-1" tabindex="-1"></a><span class="co"># Summarize the fitted model:</span></span>
 <span id="cb274-2"><a href="at-home-exercises-6.html#cb274-2" tabindex="-1"></a><span class="fu">summary</span>(out0, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 19 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 19 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -964,6 +983,11 @@ Click to show code
 ##   Test statistic                                 8.110
 ##   Degrees of freedom                                 5
 ##   P-value (Chi-square)                           0.150
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                 8.283
+##   Degrees of freedom                                 5
+##   P-value (Chi-square)                           0.141
 ## 
 ## Model Test Baseline Model:
 ## 
@@ -1079,7 +1103,7 @@ Click to show code
 Click to show code
 </summary>
 <div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="at-home-exercises-6.html#cb277-1" tabindex="-1"></a><span class="fu">summary</span>(out1, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## lavaan 0.7-2 ended normally after 27 iterations
+<pre><code>## lavaan 0.7-3 ended normally after 27 iterations
 ## 
 ##   Estimator                                         ML
 ##   Optimization method                           NLMINB
@@ -1097,6 +1121,14 @@ Click to show code
 ##   Test statistic for each group:
 ##     spouse                                       8.976
 ##     other                                        2.340
+##                                                       
+##   Browne&#39;s residual (NT model-based) test             
+##   Test statistic                                11.430
+##   Degrees of freedom                                10
+##   P-value (Chi-square)                           0.325
+##   Test statistic for each group:
+##     spouse                                       9.084
+##     other                                        2.346
 ## 
 ## Model Test Baseline Model:
 ## 

@@ -26,10 +26,15 @@ components.
 
 - Research poster (evaluated as a standalone document)
 - Poster presentation
+   - We will use [this rubric](assets/assignments/a2_poster_rubric.pdf) to evaluate your poster presentations.
 - Participation during the poster session
+   - Peer feedback
+   - Group evaluation
+   - Personal reflection
 - Supplementary material packet
-
-***Details coming soon!***
+   - Syntax file
+   - Methods and results write-up
+   - GenAI disclosure statement
 
 <!--
 Assignment 2 will be fully graded on the usual 10-point scale. We will follow the procedure described below to compute
